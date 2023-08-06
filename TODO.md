@@ -30,6 +30,50 @@
   * use 4 `custom_data_layers` to tell which adjacent tiles are allowed for new darkness tiles
     * `north`, `east`, `south`, `west`
 
+* [ ] orb scene
+  * inherit
+  * script
+    * `_on_darkness_entered`
+      * `queue_free`
+      * tween
+  * export vars for
+    * [x] color
+      * orb and light
+      * single modulate for sprite color and light color
+    * [ ] size
+      * orb and light
+    * [ ] strength
+      * stronger on closer tiles
+      * more range
+      * pulsing strength
+* orb types
+  * `core`
+  * `small_orb`
+
+* [ ] single pixel tiles
+  * 2 types
+    * `approaching`
+      * modulate changes
+        * alpha from 0 to 1
+      * changes to `finished`
+      * (optional) animation when finished
+    * `arrived`
+      * collision shape
+      * neighbors can approach
+
+#### Later
+
+* [ ] set occlusion shapes for tilemaps appropriately
+* [ ] delete images for orbs
+  * use gradient2d instead
+
+#### Difficulty
+
+* weaker orbs
+* already approaching tiles on map
+* size of map
+* increase of approaching tiles
+
 ##### Graphics
 
 * gem
@@ -48,22 +92,14 @@
 ### Themes
 
 * Invasion
-
 * Catch ‘Em All
-
 * Opposite Day
-
 * Cooperation
   * tower defense
-
 * Glitch In The Matrix
-
 * Wildfire
-
 * Recursive
-
 * Creation Story
-
 * But Does It Float?
   * platformer
   * stone
@@ -74,5 +110,4 @@
       * gain float ability 
     2. run back
       * timer?
-
 * Hidden In Plain Sight
