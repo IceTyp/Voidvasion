@@ -8,8 +8,8 @@ const ALL_NEIGHBOR_SIDES = [
 ]
 const TILEMAP_LAYER = 0
 
-@export var approaching_tiles_atlas_coords: Array[Vector2i] = [Vector2i(10, 1)]
-@export var map_size = Vector2i(16, 16)
+@export var approaching_tiles_atlas_coords: Array[Vector2i] = [Vector2i(0, 0)]
+@export var map_size = Vector2i(64, 64)
 @export_node_path("TileMap") var tile_map_path := ^".."
 
 @onready var tile_map := get_node(tile_map_path) as TileMap
@@ -19,10 +19,10 @@ func _ready() -> void:
 	var used_cells := tile_map.get_used_cells(TILEMAP_LAYER)
 	used_cells.sort()
 	
-	for cell in used_cells:
-		var atlas_coord := tile_map.get_cell_atlas_coords(TILEMAP_LAYER, cell)
-		if atlas_coord in approaching_tiles_atlas_coords:
-			print("cell ", cell, " is approaching")
+#	for cell in used_cells:
+#		var atlas_coord := tile_map.get_cell_atlas_coords(TILEMAP_LAYER, cell)
+#		if atlas_coord in approaching_tiles_atlas_coords:
+#			print("cell ", cell, " is approaching")
 
 	for coord in get_edge_darkness_coords():
 		print("cell ", coord, " has approaching neighbor")
