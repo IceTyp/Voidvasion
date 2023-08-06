@@ -26,11 +26,19 @@
 * objects need to detect what's below them
   * collisions for darkness tilemap
 * remember border tiles for creation of new tiles
+  * set tile `set_cells_terrain_connect`
+  * use 4 `custom_data_layers` to tell which adjacent tiles are allowed for new darkness tiles
+    * `north`, `east`, `south`, `west`
 
 ##### Graphics
 
 * gem
 * darkness
+  * animated
+  * 4 frames
+  * only darkness (no ground)
+* background
+  * with light possible
 * glitch effects?
 * protective _things_
 * light effects
