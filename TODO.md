@@ -1,16 +1,11 @@
 # TODO
 
-## Ideas
+## Game setting
 
-* isometric tilemap?
-
-### Darkness
-
-#### Game setting
-
-* protect gem
+* protect orb
   * holy gem in center of map
-  * [ ] or candle?
+  * or candle?
+  * orb
 * darkness invades world
 * deploy protective _things_ to delay darkness
   * [ ] specify _things_
@@ -20,7 +15,7 @@
 * how long can you delay the darkness?
 * [ ] can you win?
 
-#### Implementation
+## Implementation
 
 * tilemap for ground and darkness
 * objects need to detect what's below them
@@ -61,20 +56,26 @@
       * collision shape
       * neighbors can approach
 
-#### Later
+## Later
 
 * [ ] set occlusion shapes for tilemaps appropriately
 * [ ] delete images for orbs
   * use gradient2d instead
 
-#### Difficulty
+## UI
+
+* [ ] find nice font
+  * e.g. 5 height
+  * monospace
+
+## Difficulty
 
 * weaker orbs
 * already approaching tiles on map
 * size of map
 * increase of approaching tiles
 
-##### Graphics
+## Graphics
 
 * gem
 * darkness
@@ -89,7 +90,19 @@
 * ground/floor with variation
 * darkness with variation
 
-### Themes
+## Sound
+
+* [ ] dark ambient background sound
+* [ ] intensifying darkness sound
+
+### Effects
+
+* [ ] placing orb
+* [ ] destroying orb
+  * glass shatter
+* [ ] pulsating orb
+
+## Themes
 
 * Invasion
 * Catch ‘Em All
