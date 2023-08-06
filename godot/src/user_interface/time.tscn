@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://eqkgew17fiwo"]
+
+[ext_resource type="Theme" uid="uid://b80yagb12wjpq" path="res://assets/theme/ui_theme.tres" id="1_qfrg2"]
+[ext_resource type="Script" path="res://src/user_interface/time.gd" id="2_iipdf"]
+
+[node name="Time" type="Label"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 7.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("1_qfrg2")
+text = "01:25"
+horizontal_alignment = 1
+script = ExtResource("2_iipdf")

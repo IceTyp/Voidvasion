@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://dhwpbwves76gi"]
+[gd_scene load_steps=15 format=3 uid="uid://dhwpbwves76gi"]
 
 [ext_resource type="Texture2D" uid="uid://cl0j45dadio83" path="res://assets/tileset.png" id="1_78mhi"]
 [ext_resource type="PackedScene" uid="uid://olw5saaxm5rm" path="res://src/orbs/core.tscn" id="3_nrarj"]
 [ext_resource type="Texture2D" uid="uid://b6poeqsd30f5v" path="res://assets/2_pixel_tilemap.png" id="3_t106f"]
 [ext_resource type="PackedScene" uid="uid://bsxkcygilsi6d" path="res://src/orbs/small_orb.tscn" id="3_ut6db"]
+[ext_resource type="PackedScene" uid="uid://gu2328w2x2tp" path="res://src/user_interface/game_menu.tscn" id="5_pld2y"]
 
 [sub_resource type="Gradient" id="Gradient_omfxw"]
 offsets = PackedFloat32Array(0)
@@ -606,3 +607,7 @@ position = Vector2(8, 54)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.392157, 0.392157, 0.392157, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameMenu" parent="CanvasLayer" instance=ExtResource("5_pld2y")]

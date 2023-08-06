@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b80yagb12wjpq"]
+
+[ext_resource type="FontFile" uid="uid://cjuo1dw5eeqle" path="res://assets/theme/Silkscreen/Silkscreen-Regular.ttf" id="1_lpqip"]
+
+[resource]
+default_font = ExtResource("1_lpqip")
+default_font_size = 8
