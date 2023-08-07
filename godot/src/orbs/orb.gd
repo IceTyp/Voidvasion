@@ -1,6 +1,7 @@
 extends Area2D
+class_name Orb
 
-@export var energy: int = 1: set = set_energy
+@export var energy: float = 1: set = set_energy
 @export var color: Color = Color.WHITE: set = set_color
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
@@ -19,7 +20,6 @@ func set_color(_color: Color) -> void:
 
 
 func set_energy(val: float) -> void:
-	@warning_ignore("narrowing_conversion")
 	energy = val
 	await ready
 	point_light_2d.energy = val / 10

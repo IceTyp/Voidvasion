@@ -1,15 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://ck1aacinn3fx2"]
+[gd_scene load_steps=8 format=3 uid="uid://ck1aacinn3fx2"]
 
 [ext_resource type="Script" path="res://src/orbs/orb.gd" id="1_13i6o"]
-
-[sub_resource type="Gradient" id="Gradient_eiv4s"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_0okwi"]
-gradient = SubResource("Gradient_eiv4s")
-width = 2
-height = 2
+[ext_resource type="Texture2D" uid="uid://ct4o8ixctiaa7" path="res://assets/orbs/small.tres" id="2_8dqoy"]
 
 [sub_resource type="Gradient" id="Gradient_hy5uw"]
 offsets = PackedFloat32Array(0, 0.6)
@@ -50,7 +42,7 @@ collision_layer = 2
 script = ExtResource("1_13i6o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_0okwi")
+texture = ExtResource("2_8dqoy")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 2.0
