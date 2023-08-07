@@ -1,10 +1,10 @@
 extends Node
 
 const ALL_NEIGHBOR_SIDES = [
-		TileSet.CELL_NEIGHBOR_RIGHT_SIDE, 
-		TileSet.CELL_NEIGHBOR_BOTTOM_SIDE,
-		TileSet.CELL_NEIGHBOR_LEFT_SIDE,
-		TileSet.CELL_NEIGHBOR_TOP_SIDE,
+	TileSet.CELL_NEIGHBOR_RIGHT_SIDE, 
+	TileSet.CELL_NEIGHBOR_BOTTOM_SIDE,
+	TileSet.CELL_NEIGHBOR_LEFT_SIDE,
+	TileSet.CELL_NEIGHBOR_TOP_SIDE,
 ]
 const TILEMAP_LAYER = 0
 
@@ -59,4 +59,3 @@ func get_all_neighbors(coord: Vector2i) -> Array[Vector2i]:
 	for neighbor_side in ALL_NEIGHBOR_SIDES:
 		ret.append(tile_map.get_neighbor_cell(coord, neighbor_side))
 	return ret
-
