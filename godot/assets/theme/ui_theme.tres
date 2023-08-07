@@ -1,7 +1,13 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b80yagb12wjpq"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://b80yagb12wjpq"]
 
 [ext_resource type="FontFile" uid="uid://cjuo1dw5eeqle" path="res://assets/theme/Silkscreen/Silkscreen-Regular.ttf" id="1_lpqip"]
 
+[sub_resource type="FontVariation" id="FontVariation_0m6o7"]
+base_font = ExtResource("1_lpqip")
+spacing_glyph = -1
+spacing_top = -3
+spacing_bottom = -4
+
 [resource]
-default_font = ExtResource("1_lpqip")
+default_font = SubResource("FontVariation_0m6o7")
 default_font_size = 8

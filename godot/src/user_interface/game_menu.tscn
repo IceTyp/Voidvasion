@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://gu2328w2x2tp"]
+[gd_scene load_steps=5 format=3 uid="uid://gu2328w2x2tp"]
 
+[ext_resource type="Theme" uid="uid://b80yagb12wjpq" path="res://assets/theme/ui_theme.tres" id="1_uuba0"]
 [ext_resource type="PackedScene" uid="uid://eqkgew17fiwo" path="res://src/user_interface/time.tscn" id="1_x67jg"]
+
+[sub_resource type="Gradient" id="Gradient_clksn"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_djdlo"]
+gradient = SubResource("Gradient_clksn")
+height = 7
 
 [node name="GameMenu" type="Control"]
 layout_mode = 3
@@ -9,12 +18,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_uuba0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 7.0
+texture = SubResource("GradientTexture2D_djdlo")
 
 [node name="Time" parent="." instance=ExtResource("1_x67jg")]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-offset_left = -26.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -13.0
+offset_right = 13.0
 offset_bottom = 23.0
-grow_horizontal = 0
 text = "31:25"
