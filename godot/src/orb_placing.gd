@@ -1,7 +1,7 @@
 extends Node2D
 
 var small_orb := preload("res://src/orbs/small_orb.tscn")
-
+var cursor_orb := preload("res://src/orbs/cursor_orb.tscn")
 
 ## this places orbs everywhere (for testing)
 #func _ready() -> void:
@@ -10,6 +10,10 @@ var small_orb := preload("res://src/orbs/small_orb.tscn")
 #			var orb := small_orb.instantiate()
 #			orb.position = Vector2(x, y)
 #			add_child(orb)
+
+
+func _ready() -> void:
+	add_child(cursor_orb.instantiate())
 
 
 func _input(event: InputEvent) -> void:
