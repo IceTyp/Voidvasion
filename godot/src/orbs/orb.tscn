@@ -58,7 +58,6 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_tgoke")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_1b4bg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -67,5 +66,3 @@ speed_scale = 0.2
 libraries = {
 "": SubResource("AnimationLibrary_a88b0")
 }
-
-[connection signal="body_entered" from="." to="." method="_on_darkness_entered"]
