@@ -21,20 +21,26 @@ func _ready() -> void:
 	arrived.connect(_on_arrived)
 	
 	await get_tree().process_frame
+	await get_tree().process_frame
 	for neighbor in neighbor_detector.get_overlapping_areas():
 		arrived.connect(neighbor.get_parent().start_approach)
 
 
 func start_approach() -> void:
-	if state == States.WAITING:
-		state = States.APPROACHING
-		while darkness_level < 1:
-			await get_tree().create_timer(randf_range(.5, 2)).timeout
-			update()
-		emit_signal("arrived")
+	match state:
+		States.ARRIVED:
+			return
+		States.APPROACHING:
+			approach()
+		States.WAITING:
+			state = States.APPROACHING
+			while darkness_level < 1:
+				await get_tree().create_timer(randf_range(.5, 2)).timeout
+				approach()
+			emit_signal("arrived")
 
 
-func update() -> void:
+func approach() -> void:
 	darkness_level += (randf_range(0.1, 1) ** 2) / (1 + len(orbit_detector.get_overlapping_areas()))
 	darkness_level = clamp(darkness_level, 0, 1)
 	modulate = Color(1, 1, 1, darkness_level)
