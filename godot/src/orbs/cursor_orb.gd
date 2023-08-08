@@ -1,7 +1,8 @@
 extends Orb
 
 func _ready() -> void:
-	pass
+	set_orbits()
+
 
 func _process(_delta: float) -> void:
 	# TODO clamp window size

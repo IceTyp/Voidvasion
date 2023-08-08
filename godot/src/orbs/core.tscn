@@ -15,6 +15,7 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.8, 0)
 
 [node name="Core" instance=ExtResource("1_2okj1")]
+energy = 5
 color = Color(0.611765, 0.372549, 1, 1)
 
 [node name="PointLight2D" parent="." index="1"]
@@ -22,5 +23,5 @@ color = Color(0.611765, 0.372549, 1, 1)
 energy = 0.3
 texture = SubResource("GradientTexture2D_fwu0h")
 
-[node name="AnimationPlayer" parent="." index="3"]
+[node name="AnimationPlayer" parent="." index="4"]
 speed_scale = 0.6

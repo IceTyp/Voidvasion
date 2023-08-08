@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://de4yugox12bkg"]
+
+[ext_resource type="Script" path="res://src/orbs/orbit.gd" id="1_10cic"]
+
+[node name="Orbit" type="Area2D"]
+script = ExtResource("1_10cic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+debug_color = Color(0.768743, 0.445197, 0.0528729, 0.42)

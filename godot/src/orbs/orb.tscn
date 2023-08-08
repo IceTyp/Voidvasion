@@ -52,6 +52,8 @@ texture = SubResource("GradientTexture2D_tgoke")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1b4bg")
 
+[node name="Orbits" type="Node2D" parent="."]
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "pulsating"
 speed_scale = 0.2
