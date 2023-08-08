@@ -13,7 +13,7 @@ var orbit := preload("res://src/orbs/orbit.tscn")
 
 
 func _ready() -> void:
-	connect("body_entered", _on_darkness_entered)
+	body_entered.connect(_on_darkness_entered)
 	set_orbits()
 
 

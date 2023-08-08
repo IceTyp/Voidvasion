@@ -1,5 +1,6 @@
 extends Orb
 
+
 func _ready() -> void:
 	set_orbits()
 

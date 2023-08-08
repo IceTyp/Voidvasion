@@ -38,7 +38,7 @@ _data = {
 }
 
 [node name="Orb" type="Area2D"]
-collision_layer = 2
+collision_layer = 0
 script = ExtResource("1_13i6o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
