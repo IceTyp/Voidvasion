@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://csbl7cdky8pmi"]
+
+[ext_resource type="Script" path="res://src/tiles/darkness_tile.gd" id="1_0y4dj"]
+
+[sub_resource type="Gradient" id="Gradient_wnqhe"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.329412, 0, 0.596078, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_scbc5"]
+gradient = SubResource("Gradient_wnqhe")
+width = 1
+height = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qn0v"]
+size = Vector2(2, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijnt2"]
+size = Vector2(1, 1)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hc3u7"]
+polygon = PackedVector2Array(0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eydju"]
+size = Vector2(1, 1)
+
+[node name="DarknessTile" type="StaticBody2D"]
+collision_mask = 0
+script = ExtResource("1_0y4dj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_scbc5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_3qn0v")
+debug_color = Color(0.929412, 0.0117647, 0.658824, 0.419608)
+
+[node name="OrbitDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrbitDetector"]
+visible = false
+shape = SubResource("RectangleShape2D_ijnt2")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_hc3u7")
+
+[node name="NeighborDetector" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NeighborDetector"]
+visible = false
+shape = SubResource("RectangleShape2D_eydju")

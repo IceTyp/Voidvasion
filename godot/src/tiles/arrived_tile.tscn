@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctelatmnjy16n"]
+
+[ext_resource type="PackedScene" uid="uid://csbl7cdky8pmi" path="res://src/tiles/darkness_tile.tscn" id="1_locww"]
+[ext_resource type="Script" path="res://src/tiles/arrived_tile.gd" id="1_siyfp"]
+
+[node name="ArrivedTile" instance=ExtResource("1_locww")]
+script = ExtResource("1_siyfp")
+
+[node name="OrbitDetector" parent="." index="2"]
+visible = false
+
+[node name="CollisionShape2D" parent="OrbitDetector" index="0"]
+visible = true
