@@ -2,9 +2,6 @@ extends Node2D
 
 signal place_orb(position)
 
-var small_orb := preload("res://src/orbs/small_orb.tscn")
-var cursor_orb := preload("res://src/orbs/cursor_orb.tscn")
-
 @onready var point_light_2d: PointLight2D = $PointLight2D
 @onready var collision_detector: Area2D = $CollisionDetector
 
