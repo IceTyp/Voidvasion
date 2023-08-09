@@ -2,12 +2,17 @@
 
 [ext_resource type="FontFile" uid="uid://cjuo1dw5eeqle" path="res://assets/theme/Silkscreen/Silkscreen-Regular.ttf" id="1_lpqip"]
 
-[sub_resource type="FontVariation" id="FontVariation_0m6o7"]
-base_font = ExtResource("1_lpqip")
-spacing_glyph = -1
-spacing_top = -3
-spacing_bottom = -4
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2bdxo"]
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_detail = 1
 
 [resource]
-default_font = SubResource("FontVariation_0m6o7")
+default_font = ExtResource("1_lpqip")
 default_font_size = 8
+Button/constants/h_separation = 0
+Button/styles/normal = SubResource("StyleBoxFlat_2bdxo")

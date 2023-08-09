@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://gu2328w2x2tp"]
+[gd_scene load_steps=7 format=3 uid="uid://gu2328w2x2tp"]
 
 [ext_resource type="Theme" uid="uid://b80yagb12wjpq" path="res://assets/theme/ui_theme.tres" id="1_uuba0"]
 [ext_resource type="PackedScene" uid="uid://eqkgew17fiwo" path="res://src/user_interface/time.tscn" id="1_x67jg"]
+[ext_resource type="Script" path="res://src/user_interface/ButtonStart.gd" id="3_rb4pa"]
+[ext_resource type="PackedScene" uid="uid://yjaa4snhm8sg" path="res://src/user_interface/game_end_screen.tscn" id="4_c6wfr"]
 
 [sub_resource type="Gradient" id="Gradient_clksn"]
 offsets = PackedFloat32Array(0)
@@ -21,16 +23,34 @@ grow_vertical = 2
 theme = ExtResource("1_uuba0")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
+layout_mode = 2
 offset_right = 64.0
 offset_bottom = 7.0
 texture = SubResource("GradientTexture2D_djdlo")
 
-[node name="Time" parent="." instance=ExtResource("1_x67jg")]
+[node name="Time" parent="TextureRect" instance=ExtResource("1_x67jg")]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -11.0
-offset_right = 11.0
+offset_left = -13.0
+offset_right = 13.0
+offset_bottom = 23.0
 text = "31:25"
+
+[node name="ButtonStart" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_right = 32.0
+offset_bottom = 11.0
+grow_horizontal = 2
+text = "Start"
+script = ExtResource("3_rb4pa")
+
+[node name="GameEndScreen" parent="." instance=ExtResource("4_c6wfr")]
+layout_mode = 1
+
+[connection signal="pressed" from="TextureRect/ButtonStart" to="TextureRect/ButtonStart" method="_on_pressed"]
