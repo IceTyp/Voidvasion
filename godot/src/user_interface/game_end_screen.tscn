@@ -60,3 +60,5 @@ text = "> Copy <"
 [node name="ButtonQuit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "> Quit <"
+
+[connection signal="pressed" from="VBoxContainer/ButtonTryAgain" to="." method="_on_button_try_again_pressed"]

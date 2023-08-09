@@ -45,6 +45,8 @@ func set_energy(val: int) -> void:
 
 
 func _on_darkness_entered(_body: Node2D) -> void:
+	darkness_detector.body_entered.disconnect(_on_darkness_entered)
+	orbits.queue_free()
 	await create_tween().tween_property(point_light_2d, "energy", 0, energy).finished
 	# TODO add puff animation
 	queue_free()
