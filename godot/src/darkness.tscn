@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://7ga41s5xcmjd"]
+[gd_scene load_steps=5 format=3 uid="uid://bwtv1wsx2dthy"]
 
 [ext_resource type="PackedScene" uid="uid://ctelatmnjy16n" path="res://src/tiles/arrived_tile.tscn" id="1_qsf2i"]
 [ext_resource type="PackedScene" uid="uid://csbl7cdky8pmi" path="res://src/tiles/darkness_tile.tscn" id="2_bolgh"]
