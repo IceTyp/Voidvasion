@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://src/tiles/arrived_tile.gd" id="1_siyfp"]
 
 [node name="ArrivedTile" instance=ExtResource("1_locww")]
+modulate = Color(0, 0, 0, 1)
 script = ExtResource("1_siyfp")
 
 [node name="OrbitDetector" parent="." index="2"]

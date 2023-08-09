@@ -20,6 +20,7 @@ func _ready() -> void:
 	modulate = Color(1, 1, 1, 0)
 	arrived.connect(_on_arrived)
 	
+	# TODO
 	await get_tree().process_frame
 	await get_tree().process_frame
 	for neighbor in neighbor_detector.get_overlapping_areas():

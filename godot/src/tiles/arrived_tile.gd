@@ -2,9 +2,10 @@ extends DarknessTile
 
 
 func _ready() -> void:
+	Global.game_started.connect(_on_game_started)
 	super._ready()
 	_on_arrived()
-	await get_tree().process_frame
-	await get_tree().process_frame
-	await get_tree().process_frame
+
+
+func _on_game_started() -> void:
 	arrived.emit()
