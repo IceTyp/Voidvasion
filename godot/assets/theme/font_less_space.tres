@@ -1,0 +1,9 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://baj0huth527js"]
+
+[ext_resource type="FontFile" uid="uid://cjuo1dw5eeqle" path="res://assets/theme/Silkscreen/Silkscreen-Regular.ttf" id="1_f8i5u"]
+
+[resource]
+base_font = ExtResource("1_f8i5u")
+spacing_glyph = -1
+spacing_top = -3
+spacing_bottom = -1

@@ -10,6 +10,7 @@ func _ready() -> void:
 	Global.game_ended.connect(stop_time)
 	timer.timeout.connect(_on_timer_timeout)
 	update_displayed_time()
+	hide()
 
 
 func update_displayed_time() -> void:
@@ -18,6 +19,7 @@ func update_displayed_time() -> void:
 
 
 func start_time() -> void:
+	show()
 	timer.start()
 
 

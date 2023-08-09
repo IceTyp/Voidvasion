@@ -28,17 +28,17 @@ grow_vertical = 0
 alignment = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
+size_flags_vertical = 3
 bbcode_enabled = true
 text = "[center]You lost...[/center]"
 scroll_active = false
 
 [node name="ButtonTryAgain" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Try Again"
+text = "> Try Again <"
 
 [node name="ButtonCopy" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-text = "Copy"
+text = "> Copy <"

@@ -35,19 +35,20 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -13.0
 offset_right = 13.0
-offset_bottom = 23.0
 text = "31:25"
+vertical_alignment = 1
 
 [node name="ButtonStart" type="Button" parent="TextureRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -32.0
 offset_right = 32.0
-offset_bottom = 11.0
+offset_bottom = 5.0
 grow_horizontal = 2
-text = "Start"
+text = "> Start <"
 script = ExtResource("3_rb4pa")
 
 [node name="GameEndScreen" parent="." instance=ExtResource("4_c6wfr")]

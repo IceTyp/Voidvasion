@@ -1,18 +1,14 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://b80yagb12wjpq"]
 
-[ext_resource type="FontFile" uid="uid://cjuo1dw5eeqle" path="res://assets/theme/Silkscreen/Silkscreen-Regular.ttf" id="1_lpqip"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2bdxo"]
-content_margin_top = 0.0
-content_margin_bottom = 0.0
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-corner_detail = 1
+[ext_resource type="FontVariation" uid="uid://baj0huth527js" path="res://assets/theme/font_less_space.tres" id="1_adnas"]
+[ext_resource type="StyleBox" uid="uid://dbpppe6lm620a" path="res://assets/theme/style_box_buttons.tres" id="1_dduy6"]
 
 [resource]
-default_font = ExtResource("1_lpqip")
+default_font = ExtResource("1_adnas")
 default_font_size = 8
-Button/constants/h_separation = 0
-Button/styles/normal = SubResource("StyleBoxFlat_2bdxo")
+Button/colors/font_hover_color = Color(0.733333, 0.345098, 0.188235, 1)
+Button/styles/focus = ExtResource("1_dduy6")
+Button/styles/hover = ExtResource("1_dduy6")
+Button/styles/normal = ExtResource("1_dduy6")
+Button/styles/pressed = ExtResource("1_dduy6")
+VBoxContainer/constants/separation = 0
