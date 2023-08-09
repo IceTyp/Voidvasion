@@ -22,23 +22,29 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_uuba0")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
 layout_mode = 2
-offset_right = 64.0
-offset_bottom = 7.0
 texture = SubResource("GradientTexture2D_djdlo")
 
-[node name="Time" parent="TextureRect" instance=ExtResource("1_x67jg")]
+[node name="Time" parent="VBoxContainer/TextureRect" instance=ExtResource("1_x67jg")]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -13.0
 offset_right = 13.0
+offset_bottom = 23.0
 text = "31:25"
-vertical_alignment = 1
 
-[node name="ButtonStart" type="Button" parent="TextureRect"]
+[node name="ButtonStart" type="Button" parent="VBoxContainer/TextureRect"]
 visible = false
 layout_mode = 1
 anchors_preset = 5
@@ -51,7 +57,8 @@ grow_horizontal = 2
 text = "> Start <"
 script = ExtResource("3_rb4pa")
 
-[node name="GameEndScreen" parent="." instance=ExtResource("4_c6wfr")]
-layout_mode = 1
+[node name="GameEndScreen" parent="VBoxContainer" instance=ExtResource("4_c6wfr")]
+visible = false
+layout_mode = 2
 
-[connection signal="pressed" from="TextureRect/ButtonStart" to="TextureRect/ButtonStart" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/TextureRect/ButtonStart" to="VBoxContainer/TextureRect/ButtonStart" method="_on_pressed"]
