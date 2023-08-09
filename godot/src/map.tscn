@@ -7,12 +7,12 @@
 [ext_resource type="Script" path="res://src/orb_placing.gd" id="4_wvxrt"]
 [ext_resource type="PackedScene" uid="uid://gu2328w2x2tp" path="res://src/user_interface/game_menu.tscn" id="5_pld2y"]
 
-[sub_resource type="Gradient" id="Gradient_omfxw"]
+[sub_resource type="Gradient" id="Gradient_0k53b"]
 offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.340339, 0.340339, 0.340339, 1)
+colors = PackedColorArray(0.32549, 0.32549, 0.32549, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_mqmvy"]
-gradient = SubResource("Gradient_omfxw")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7xfn3"]
+gradient = SubResource("Gradient_0k53b")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_cyeso"]
 scenes/1/scene = ExtResource("1_frg17")
@@ -26,7 +26,7 @@ sources/0 = SubResource("TileSetScenesCollectionSource_cyeso")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(32, 32)
-texture = SubResource("GradientTexture2D_mqmvy")
+texture = SubResource("GradientTexture2D_7xfn3")
 
 [node name="Cursor" parent="." instance=ExtResource("2_7x8i3")]
 
