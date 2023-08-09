@@ -17,6 +17,10 @@ func _ready() -> void:
 	set_orbits()
 
 
+func _process(delta: float) -> void:
+	rotate(delta / 25)
+
+
 func set_orbits() -> void:
 	for i in range(energy):
 		var element := orbit.instantiate()
