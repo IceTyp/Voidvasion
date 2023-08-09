@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://blyg4536s56p8"]
+[gd_scene load_steps=5 format=3 uid="uid://blyg4536s56p8"]
 
 [ext_resource type="Theme" uid="uid://b80yagb12wjpq" path="res://assets/theme/ui_theme.tres" id="1_88vo1"]
 [ext_resource type="Script" path="res://src/user_interface/main_menu.gd" id="2_fnyqp"]
 [ext_resource type="FontFile" uid="uid://cououee6e731f" path="res://assets/theme/Silkscreen/Silkscreen-Bold.ttf" id="2_xq8rd"]
+[ext_resource type="PackedScene" uid="uid://d366ijltpt61g" path="res://src/user_interface/button_quit.tscn" id="4_x1yb3"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -13,6 +14,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_88vo1")
 script = ExtResource("2_fnyqp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
@@ -45,13 +55,6 @@ text = "Dream"
 layout_mode = 2
 text = "Nightmare"
 
-[node name="ButtonQuit" type="Button" parent="."]
+[node name="ButtonQuit" parent="." instance=ExtResource("4_x1yb3")]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -7.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "> Quit <"
+offset_top = -8.0

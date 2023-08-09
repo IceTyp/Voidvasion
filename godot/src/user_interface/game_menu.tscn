@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://b80yagb12wjpq" path="res://assets/theme/ui_theme.tres" id="1_uuba0"]
 [ext_resource type="PackedScene" uid="uid://eqkgew17fiwo" path="res://src/user_interface/time.tscn" id="1_x67jg"]
-[ext_resource type="Script" path="res://src/user_interface/ButtonStart.gd" id="3_rb4pa"]
+[ext_resource type="Script" path="res://src/user_interface/button_start.gd" id="3_wd2ni"]
 [ext_resource type="PackedScene" uid="uid://yjaa4snhm8sg" path="res://src/user_interface/game_end_screen.tscn" id="4_c6wfr"]
 
 [sub_resource type="Gradient" id="Gradient_clksn"]
@@ -55,7 +55,7 @@ offset_right = 32.0
 offset_bottom = 5.0
 grow_horizontal = 2
 text = "> Start <"
-script = ExtResource("3_rb4pa")
+script = ExtResource("3_wd2ni")
 
 [node name="GameEndScreen" parent="VBoxContainer" instance=ExtResource("4_c6wfr")]
 visible = false
