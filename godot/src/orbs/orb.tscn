@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ck1aacinn3fx2"]
+[gd_scene load_steps=9 format=3 uid="uid://ck1aacinn3fx2"]
 
 [ext_resource type="Script" path="res://src/orbs/orb.gd" id="1_13i6o"]
 [ext_resource type="Texture2D" uid="uid://ct4o8ixctiaa7" path="res://assets/orbs/small.tres" id="2_8dqoy"]
@@ -14,6 +14,9 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.8, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1b4bg"]
+size = Vector2(2, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ej1fr"]
 size = Vector2(2, 2)
 
 [sub_resource type="Animation" id="Animation_j4je1"]
@@ -37,8 +40,9 @@ _data = {
 "pulsating": SubResource("Animation_j4je1")
 }
 
-[node name="Orb" type="Area2D"]
-collision_layer = 0
+[node name="Orb" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_13i6o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -51,6 +55,12 @@ texture = SubResource("GradientTexture2D_tgoke")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1b4bg")
+
+[node name="DarknessDetector" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DarknessDetector"]
+shape = SubResource("RectangleShape2D_ej1fr")
 
 [node name="Orbits" type="Node2D" parent="."]
 

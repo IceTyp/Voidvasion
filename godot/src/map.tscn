@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhwpbwves76gi"]
+[gd_scene load_steps=8 format=3 uid="uid://dhwpbwves76gi"]
 
 [ext_resource type="PackedScene" uid="uid://7ga41s5xcmjd" path="res://src/darkness.tscn" id="1_qviga"]
+[ext_resource type="PackedScene" uid="uid://cu10jyb0dvxau" path="res://src/cursor.tscn" id="2_7x8i3"]
 [ext_resource type="PackedScene" uid="uid://olw5saaxm5rm" path="res://src/orbs/core.tscn" id="3_nrarj"]
 [ext_resource type="Script" path="res://src/orb_placing.gd" id="4_wvxrt"]
 [ext_resource type="PackedScene" uid="uid://gu2328w2x2tp" path="res://src/user_interface/game_menu.tscn" id="5_pld2y"]
@@ -20,12 +21,14 @@ texture = SubResource("GradientTexture2D_mqmvy")
 
 [node name="Darkness" parent="." instance=ExtResource("1_qviga")]
 
+[node name="Cursor" parent="." instance=ExtResource("2_7x8i3")]
+
 [node name="Orbs" type="Node2D" parent="."]
 script = ExtResource("4_wvxrt")
 
 [node name="Core" parent="Orbs" instance=ExtResource("3_nrarj")]
 position = Vector2(32, 32)
-collision_layer = 2
+collision_mask = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.392157, 0.392157, 0.392157, 1)
@@ -33,3 +36,5 @@ color = Color(0.392157, 0.392157, 0.392157, 1)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GameMenu" parent="CanvasLayer" instance=ExtResource("5_pld2y")]
+
+[connection signal="place_orb" from="Cursor" to="Orbs" method="_on_cursor_place_orb"]

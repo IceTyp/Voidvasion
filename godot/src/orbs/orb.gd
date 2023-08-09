@@ -1,5 +1,5 @@
-extends Area2D
 class_name Orb
+extends StaticBody2D
 
 @export var energy: int = 1: set = set_energy
 @export var color: Color = Color.WHITE: set = set_color
@@ -8,12 +8,13 @@ var orbit := preload("res://src/orbs/orbit.tscn")
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var point_light_2d: PointLight2D = $PointLight2D
+@onready var darkness_detector: Area2D = $DarknessDetector
 @onready var orbits: Node2D = $Orbits
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 func _ready() -> void:
-	body_entered.connect(_on_darkness_entered)
+	darkness_detector.body_entered.connect(_on_darkness_entered)
 	set_orbits()
 
 
