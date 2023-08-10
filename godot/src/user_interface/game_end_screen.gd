@@ -3,7 +3,7 @@ extends Control
 signal new_game_requested
 
 const messages := {
-	0: "Well...",
+	0: "Improvable",
 	70: "Not Bad!",
 	90: "Brilliant",
 	110: "Glowing Effort!",
@@ -27,8 +27,9 @@ func _ready() -> void:
 
 func update_result(val: String) -> void:
 	result = val
-	rich_text_label.text = "[center]%s[/center]" % result
-
+	rich_text_label.text = (
+		"[center][color=#eb8660][ghost]%s[/ghost][/color][/center]\nOrbs: %s" % [result, Global.orbs_placed]
+	)
 
 func _on_game_ended() -> void:
 	modulate = Color(1, 1, 1, 0)
@@ -43,7 +44,12 @@ func _on_game_ended() -> void:
 
 func _on_button_copy_pressed() -> void:
 	DisplayServer.clipboard_set(
-		"%s\nYou survived %s seconds and used %s orbs." % [result, Global.seconds, Global.orbs_placed]
+		"%s\nYou survived %s seconds and used %s orb%s." % [
+				result,
+				Global.seconds,
+				Global.orbs_placed,
+				"" if Global.orbs_placed == 1 else "s"
+		]
 	)
 
 

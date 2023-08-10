@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://yjaa4snhm8sg"]
+[gd_scene load_steps=5 format=3 uid="uid://yjaa4snhm8sg"]
 
 [ext_resource type="Theme" uid="uid://b80yagb12wjpq" path="res://assets/theme/ui_theme.tres" id="1_mj8xx"]
 [ext_resource type="Script" path="res://src/user_interface/game_end_screen.gd" id="2_le4qu"]
+[ext_resource type="RichTextEffect" uid="uid://bx8rdskpu4vq1" path="res://assets/theme/rich_text_effect_ghost.tres" id="3_kh0n8"]
 [ext_resource type="PackedScene" uid="uid://d366ijltpt61g" path="res://src/user_interface/button_quit.tscn" id="4_gjsl7"]
 
 [node name="GameEndScreen" type="Control"]
@@ -27,15 +28,21 @@ color = Color(0, 0, 0, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -18.0
+offset_right = 18.0
 offset_bottom = 7.0
 grow_horizontal = 2
 size_flags_vertical = 3
 bbcode_enabled = true
-text = "[center]Not bad![/center]"
+text = "[center][color=#eb8660][ghost freq=5, span=3]Angel Of Light[/ghost][/color][/center]
+Orbs: 5"
 fit_content = true
 scroll_active = false
+autowrap_mode = 0
+custom_effects = [ExtResource("3_kh0n8")]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
