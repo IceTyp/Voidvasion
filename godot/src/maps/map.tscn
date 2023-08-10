@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhwpbwves76gi"]
+[gd_scene load_steps=13 format=3 uid="uid://dhwpbwves76gi"]
 
 [ext_resource type="PackedScene" uid="uid://ctelatmnjy16n" path="res://src/tiles/arrived_tile.tscn" id="1_frg17"]
 [ext_resource type="Script" path="res://src/maps/map.gd" id="1_lre5u"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://olw5saaxm5rm" path="res://src/orbs/core.tscn" id="3_nrarj"]
 [ext_resource type="Script" path="res://src/maps/orb_placing.gd" id="4_wvxrt"]
 [ext_resource type="PackedScene" uid="uid://gu2328w2x2tp" path="res://src/user_interface/game_menu.tscn" id="5_pld2y"]
+[ext_resource type="AudioStream" uid="uid://phedwbqdln88" path="res://sound/background/darkness.ogg" id="8_dmru3"]
 
 [sub_resource type="Gradient" id="Gradient_0k53b"]
 offsets = PackedFloat32Array(0)
@@ -51,5 +52,9 @@ color = Color(0.783523, 0.783523, 0.783523, 1)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GameMenu" parent="CanvasLayer" instance=ExtResource("5_pld2y")]
+
+[node name="AudioStreamPlayerDarkness" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_dmru3")
+volume_db = -20.0
 
 [connection signal="place_orb" from="Cursor" to="Orbs" method="_on_cursor_place_orb"]
