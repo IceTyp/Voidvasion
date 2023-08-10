@@ -28,7 +28,7 @@ func _ready() -> void:
 func update_result(val: String) -> void:
 	result = val
 	rich_text_label.text = (
-		"[center][color=#eb8660][ghost]%s[/ghost][/color][/center]\nOrbs: %s" % [result, Global.orbs_placed]
+		"[center][color=#ce643b][ghost]%s[/ghost][/color][/center]\nOrbs: %s" % [result, Global.orbs_placed]
 	)
 
 func _on_game_ended() -> void:
