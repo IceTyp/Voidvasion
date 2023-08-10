@@ -3,11 +3,14 @@ extends Node
 signal game_started
 signal game_ended
 
+const max_orb_number := 15
+
 var main_menu: Control
 var current_map: Node2D
 var maps := [
 	preload("res://src/maps/map.tscn"),
 ]
+var orb_counter := 0
 
 
 func load_map(difficulty: int) -> void:
@@ -24,9 +27,17 @@ func show_main_menu() -> void:
 		current_map.queue_free()
 
 
-func _on_button_start_pressed() -> void:
-	game_started.emit()
+func _on_orb_placed() -> void:
+	orb_counter += 1
+
+
+func _on_orb_broken() -> void:
+	orb_counter -= 1
 
 
 func _on_core_broken() -> void:
 	game_ended.emit()
+
+
+func _on_button_start_pressed() -> void:
+	game_started.emit()

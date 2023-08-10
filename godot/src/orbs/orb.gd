@@ -1,6 +1,7 @@
 class_name Orb
 extends StaticBody2D
 
+signal orb_placed
 signal orb_broken
 
 @export var energy: int = 1: set = set_energy
@@ -17,7 +18,10 @@ var orbit := preload("res://src/orbs/orbit.tscn")
 
 func _ready() -> void:
 	darkness_detector.body_entered.connect(_on_darkness_entered)
+	orb_placed.connect(Global._on_orb_placed)
+	orb_broken.connect(Global._on_orb_broken)
 	set_orbits()
+	orb_placed.emit()
 
 
 func _process(delta: float) -> void:

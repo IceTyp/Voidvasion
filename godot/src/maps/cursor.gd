@@ -8,6 +8,7 @@ signal place_orb(position)
 
 func _process(_delta: float) -> void:
 	position = get_global_mouse_position().round()
+	visible = Global.orb_counter < Global.max_orb_number
 	point_light_2d.visible = not collision_detector.has_overlapping_bodies()
 
 
@@ -16,5 +17,5 @@ func _input(event: InputEvent) -> void:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			if collision_detector.has_overlapping_bodies():
 				return
-			else:
+			elif Global.orb_counter < Global.max_orb_number:
 				place_orb.emit(position)
