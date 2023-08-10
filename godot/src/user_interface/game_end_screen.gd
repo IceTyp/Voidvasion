@@ -8,7 +8,8 @@ signal new_game_requested
 func _ready() -> void:
 	hide()
 	Global.game_ended.connect(_on_game_ended)
-	button_new_game.pressed.connect(Global._on_button_new_game_pressed)
+	new_game_requested.connect(Global._on_new_game_requested)
+	button_new_game.pressed.connect(_on_button_new_game_pressed)
 
 
 func _on_game_ended() -> void:
@@ -23,3 +24,8 @@ func _on_button_copy_pressed() -> void:
 
 func _on_button_quit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_button_new_game_pressed() -> void:
+	await create_tween().tween_property(self, "modulate", Color(0, 0, 0, 1), 0.5).finished
+	new_game_requested.emit()

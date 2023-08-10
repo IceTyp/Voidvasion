@@ -45,7 +45,7 @@ func _on_core_broken() -> void:
 	game_ended.emit()
 
 
-func _on_button_new_game_pressed() -> void:
+func _on_new_game_requested() -> void:
 	show_main_menu()
 
 

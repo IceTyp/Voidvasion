@@ -37,6 +37,7 @@ mouse_filter = 0
 texture = SubResource("GradientTexture2D_djdlo")
 
 [node name="Time" parent="VBoxContainer/TextureRect" instance=ExtResource("1_x67jg")]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -47,15 +48,15 @@ offset_bottom = 23.0
 text = "31:25"
 
 [node name="ButtonStart" type="Button" parent="VBoxContainer/TextureRect"]
-visible = false
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -32.0
-offset_right = 32.0
-offset_bottom = 5.0
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -3.5
+offset_bottom = 3.5
 grow_horizontal = 2
+grow_vertical = 2
 text = "> Start <"
 script = ExtResource("3_wd2ni")
 
