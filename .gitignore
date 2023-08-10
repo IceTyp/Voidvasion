@@ -1,4 +1,9 @@
 .import/
-*.wav.import
+*.mp3
+*.wav
+*.mp3.import
 *.ogg.import
+*.wav.import
 *~
+*.ods#
+godot/movies/
