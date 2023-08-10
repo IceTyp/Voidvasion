@@ -26,9 +26,9 @@ func _unhandled_input(event: InputEvent) -> void:
 				audio_stream_player_failed.play()
 			elif Global.orb_counter >= Global.max_orb_number:
 				audio_stream_player_failed.play()
-			elif Global.orb_counter < Global.max_orb_number:
+			else:
 				audio_stream_player_place_orb.play()
-				place_orb.emit(position)
+				place_orb.emit(event.position)
 				get_viewport().set_input_as_handled()
 
 
