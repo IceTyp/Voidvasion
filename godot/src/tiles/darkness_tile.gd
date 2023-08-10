@@ -12,7 +12,6 @@ var darkness_level := 0.0
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var light_occluder_2d: LightOccluder2D = $LightOccluder2D
 @onready var neighbor_detector: Area2D = $NeighborDetector
-@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 func _ready() -> void:
@@ -39,7 +38,6 @@ func start_approach() -> void:
 			while darkness_level < 1:
 				await get_tree().create_timer(randf_range(.5, 2)).timeout
 				approach()
-			audio_stream_player_2d.play()
 			emit_signal("arrived")
 
 
