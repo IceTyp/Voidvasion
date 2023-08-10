@@ -12,6 +12,7 @@ var maps := [
 	preload("res://src/maps/map.tscn"),
 ]
 var orb_counter := 0
+var orbs_placed := 0
 var seconds := 0
 
 
@@ -20,6 +21,8 @@ func _ready() -> void:
 
 
 func load_map(difficulty: int) -> void:
+	orb_counter = 0
+	orbs_placed = 0
 	if len(maps) > difficulty:
 		current_map = maps[difficulty].instantiate()
 		get_tree().get_root().add_child(current_map)
@@ -36,6 +39,7 @@ func show_main_menu() -> void:
 
 func _on_orb_placed() -> void:
 	orb_counter += 1
+	orbs_placed += 1
 	orb_count_changed.emit()
 
 

@@ -52,7 +52,6 @@ layout_mode = 2
 text = "> Try Again <"
 
 [node name="ButtonCopy" type="Button" parent="VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 8
 text = "> Copy <"
@@ -69,3 +68,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
+
+[connection signal="pressed" from="VBoxContainer/ButtonNewGame" to="." method="_on_button_new_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonCopy" to="." method="_on_button_copy_pressed"]
