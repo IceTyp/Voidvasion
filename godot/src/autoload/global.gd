@@ -2,6 +2,7 @@ extends Node
 
 signal game_started
 signal game_ended
+signal orb_count_changed
 
 const max_orb_number := 15
 
@@ -34,10 +35,12 @@ func show_main_menu() -> void:
 
 func _on_orb_placed() -> void:
 	orb_counter += 1
+	orb_count_changed.emit()
 
 
 func _on_orb_broken() -> void:
 	orb_counter -= 1
+	orb_count_changed.emit()
 
 
 func _on_core_broken() -> void:

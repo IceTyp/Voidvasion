@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://gu2328w2x2tp"]
+[gd_scene load_steps=8 format=3 uid="uid://gu2328w2x2tp"]
 
 [ext_resource type="Theme" uid="uid://b80yagb12wjpq" path="res://assets/theme/ui_theme.tres" id="1_uuba0"]
 [ext_resource type="PackedScene" uid="uid://eqkgew17fiwo" path="res://src/user_interface/time.tscn" id="1_x67jg"]
 [ext_resource type="Script" path="res://src/user_interface/button_start.gd" id="3_wd2ni"]
+[ext_resource type="Script" path="res://src/user_interface/OrbCounter.gd" id="4_06lo5"]
 [ext_resource type="PackedScene" uid="uid://yjaa4snhm8sg" path="res://src/user_interface/game_end_screen.tscn" id="4_c6wfr"]
 
 [sub_resource type="Gradient" id="Gradient_clksn"]
@@ -59,6 +60,19 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "> Start <"
 script = ExtResource("3_wd2ni")
+
+[node name="OrbCounter" type="Label" parent="VBoxContainer/TextureRect"]
+modulate = Color(0.592157, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_bottom = 10.0
+grow_horizontal = 0
+text = "0"
+horizontal_alignment = 2
+script = ExtResource("4_06lo5")
 
 [node name="GameEndScreen" parent="VBoxContainer" instance=ExtResource("4_c6wfr")]
 visible = false
