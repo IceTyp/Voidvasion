@@ -52,6 +52,4 @@ func _on_darkness_entered(_body: Node2D) -> void:
 	await get_tree().create_timer(0.05).timeout
 	point_light_2d.energy = energy
 	await get_tree().create_timer(0.1).timeout
-	point_light_2d.queue_free()
-	await get_tree().create_timer(1).timeout
 	queue_free()

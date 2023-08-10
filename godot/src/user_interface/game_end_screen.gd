@@ -10,7 +10,9 @@ func _ready() -> void:
 
 
 func _on_game_ended() -> void:
+	modulate = Color(1, 1, 1, 0)
 	show()
+	create_tween().tween_property(self, "modulate", Color(1, 1, 1, 1), 0.5)
 
 
 func _on_button_try_again_pressed() -> void:

@@ -35,7 +35,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 bbcode_enabled = true
-text = "[center]You lost...[/center]"
+text = "[center]Not bad![/center]"
 fit_content = true
 scroll_active = false
 
