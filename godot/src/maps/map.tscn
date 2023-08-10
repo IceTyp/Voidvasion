@@ -56,5 +56,6 @@ color = Color(0.783523, 0.783523, 0.783523, 1)
 [node name="AudioStreamPlayerDarkness" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_dmru3")
 volume_db = -20.0
+bus = &"Background"
 
 [connection signal="place_orb" from="Cursor" to="Orbs" method="_on_cursor_place_orb"]

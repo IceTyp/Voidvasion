@@ -124,3 +124,4 @@ libraries = {
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 max_distance = 64.0
 attenuation = 2.0
+bus = &"SoundEffects"
