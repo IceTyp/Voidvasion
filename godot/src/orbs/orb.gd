@@ -14,6 +14,7 @@ var orbit := preload("res://src/orbs/orbit.tscn")
 @onready var darkness_detector: Area2D = $DarknessDetector
 @onready var orbits: Node2D = $Orbits
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 func _ready() -> void:
@@ -53,10 +54,7 @@ func set_energy(val: int) -> void:
 func _on_darkness_entered(_body: Node2D) -> void:
 	darkness_detector.body_entered.disconnect(_on_darkness_entered)
 	orbits.queue_free()
-	animation_player.queue_free()
-	point_light_2d.energy = 0
-	await get_tree().create_timer(0.05).timeout
-	point_light_2d.energy = energy
-	await get_tree().create_timer(0.1).timeout
+	animation_player.play("shatter")
+	await animation_player.animation_finished
 	orb_broken.emit()
 	queue_free()
