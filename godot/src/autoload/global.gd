@@ -6,7 +6,7 @@ signal game_ended
 var main_menu: Control
 var current_map: Node2D
 var maps := [
-	preload("res://src/map.tscn"),
+	preload("res://src/maps/map.tscn"),
 ]
 
 
