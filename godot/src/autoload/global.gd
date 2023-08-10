@@ -13,10 +13,15 @@ var maps := [
 var orb_counter := 0
 
 
+func _ready() -> void:
+	get_tree().paused = true
+
+
 func load_map(difficulty: int) -> void:
 	if len(maps) > difficulty:
 		current_map = maps[difficulty].instantiate()
 		get_tree().get_root().add_child(current_map)
+		get_tree().paused = false
 	else:
 		show_main_menu()
 
@@ -36,7 +41,12 @@ func _on_orb_broken() -> void:
 
 
 func _on_core_broken() -> void:
+	get_tree().paused = true
 	game_ended.emit()
+
+
+func _on_button_new_game_pressed() -> void:
+	show_main_menu()
 
 
 func _on_button_start_pressed() -> void:

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d366ijltpt61g" path="res://src/user_interface/button_quit.tscn" id="4_gjsl7"]
 
 [node name="GameEndScreen" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,7 +47,7 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 2
 
-[node name="ButtonTryAgain" type="Button" parent="VBoxContainer"]
+[node name="ButtonNewGame" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "> Try Again <"
 
@@ -58,5 +59,3 @@ text = "> Copy <"
 
 [node name="ButtonQuit" parent="." instance=ExtResource("4_gjsl7")]
 layout_mode = 1
-
-[connection signal="pressed" from="VBoxContainer/ButtonTryAgain" to="." method="_on_button_try_again_pressed"]
