@@ -2,11 +2,10 @@ extends Label
 
 @onready var timer: Timer = $Timer
 
-var elapsed_seconds := 0
-
 
 func _ready() -> void:
 	Global.game_started.connect(start_time)
+	Global.seconds = 0
 	timer.timeout.connect(_on_timer_timeout)
 	update_displayed_time()
 	hide()
@@ -14,7 +13,7 @@ func _ready() -> void:
 
 func update_displayed_time() -> void:
 	@warning_ignore("integer_division")
-	text = "%02d:%02d" % [(elapsed_seconds / 60), elapsed_seconds % 60]
+	text = "%02d:%02d" % [(Global.seconds / 60), Global.seconds % 60]
 
 
 func start_time() -> void:
@@ -23,6 +22,6 @@ func start_time() -> void:
 
 
 func _on_timer_timeout() -> void:
-	elapsed_seconds += 1
+	Global.seconds += 1
 	update_displayed_time()
 	timer.start()

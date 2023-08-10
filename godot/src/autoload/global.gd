@@ -12,6 +12,7 @@ var maps := [
 	preload("res://src/maps/map.tscn"),
 ]
 var orb_counter := 0
+var seconds := 0
 
 
 func _ready() -> void:
