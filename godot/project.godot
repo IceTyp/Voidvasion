@@ -27,6 +27,10 @@ window/size/viewport_height=64
 window/size/mode=2
 window/stretch/mode="viewport"
 
+[editor]
+
+movie_writer/movie_file="/home/marcus/Documents/Spiele/Godot_projects/Lowrezjam2023/godot/movies/test.avi"
+
 [layer_names]
 
 2d_physics/layer_1="darkness"
