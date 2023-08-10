@@ -2,6 +2,7 @@ extends Node2D
 
 signal place_orb(position)
 
+@onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var point_light_2d: PointLight2D = $PointLight2D
 @onready var orb_detector: Area2D = $OrbDetector
 @onready var darkness_detector: Area2D = $DarknessDetector
@@ -9,7 +10,8 @@ signal place_orb(position)
 @onready var audio_stream_player_failed: AudioStreamPlayer2D = $AudioStreamPlayerFailed
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	rotate(-delta / 8)
 	position = get_global_mouse_position().round()
 	visible = Global.orb_counter < Global.max_orb_number
 	point_light_2d.visible = is_valid_orb_position()
