@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://ck1aacinn3fx2"]
+[gd_scene load_steps=12 format=3 uid="uid://ck1aacinn3fx2"]
 
 [ext_resource type="Script" path="res://src/orbs/orb.gd" id="1_13i6o"]
 [ext_resource type="Texture2D" uid="uid://ct4o8ixctiaa7" path="res://assets/orbs/small.tres" id="2_8dqoy"]
 [ext_resource type="AudioStream" uid="uid://dbu4m3soitk8b" path="res://sound/effects/orb_shatter.ogg" id="3_3yqgs"]
+[ext_resource type="AudioStream" uid="uid://b2jxfwcjs36k6" path="res://sound/effects/orb_pulsating.ogg" id="3_nfc7e"]
 
 [sub_resource type="Gradient" id="Gradient_hy5uw"]
 offsets = PackedFloat32Array(0, 0.6)
@@ -35,6 +36,21 @@ tracks/0/keys = {
 "update": 0,
 "values": [2.0, 2.5]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 3.72529e-09,
+"stream": ExtResource("3_nfc7e")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_dqq58"]
 resource_name = "shatter"
@@ -83,7 +99,7 @@ script = ExtResource("1_13i6o")
 texture = ExtResource("2_8dqoy")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-energy = 0.0
+energy = 2.0
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_tgoke")
 
