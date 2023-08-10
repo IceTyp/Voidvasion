@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://blyg4536s56p8"]
+[gd_scene load_steps=6 format=3 uid="uid://blyg4536s56p8"]
 
 [ext_resource type="Theme" uid="uid://b80yagb12wjpq" path="res://assets/theme/ui_theme.tres" id="1_88vo1"]
 [ext_resource type="Script" path="res://src/user_interface/main_menu.gd" id="2_fnyqp"]
 [ext_resource type="FontFile" uid="uid://cououee6e731f" path="res://assets/theme/Silkscreen/Silkscreen-Bold.ttf" id="2_xq8rd"]
 [ext_resource type="PackedScene" uid="uid://d366ijltpt61g" path="res://src/user_interface/button_quit.tscn" id="4_x1yb3"]
+[ext_resource type="Script" path="res://src/user_interface/label_version.gd" id="5_vxa2a"]
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -56,6 +57,21 @@ text = "Dream"
 layout_mode = 2
 text = "Nightmare"
 
-[node name="ButtonQuit" parent="." instance=ExtResource("4_x1yb3")]
+[node name="ButtonQuit" parent="VBoxContainer" instance=ExtResource("4_x1yb3")]
+layout_mode = 2
+
+[node name="LabelVersion" type="Label" parent="."]
 layout_mode = 1
-offset_top = -8.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "v0.1"
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("5_vxa2a")
