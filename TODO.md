@@ -1,19 +1,23 @@
 # TODO
 
-* [ ] add tween animation when switching scenes
+* [ ] define orange color for buttons and message once
 
-* [ ] use pausing scene tree
-  * this should
-    * pause timer for game time
-    * disable placing orbs
-    * disable tiles progress
+* [ ] improve end game screen
+  * copy button is ugly
+  * maybe use `()` or `-NEW GAME-` for buttons
+
+* [ ] design different maps for difficulties
+  * default
+    * [ ] center orb on tilemap
+    * [ ] remove weird black tiles
+
+* [ ] button script should also add `> <` to all buttons
+
+* [ ] find names for end game messages
 
 * [ ] find names for difficulties
-  * [ ] should fit to theme
+  * [ ] should fit theme
     * [ ] which theme?
-
-* [ ] place orbs closer to darkness
-  * [ ] but not closer to other orbs
 
 * [ ] improve ui theme
   * [ ] issues with spacing above and below
@@ -21,14 +25,41 @@
     * button
   * [ ] issue when centering text with odd number of pixels in width
 
-* [ ] wait time when only core is left is too long
-  * [ ] remove some of its orbits?
-
-* [ ] autoload script
-  * [ ] keeps track of number of orbs
-    * orbs emit signals to update this number
-
 * [ ] allow placing more orbs when some are broken?
+
+* (optional) improve export script by allowing export for windows, linux and web
+  * fix it
+
+* (optional) drag mouse to place orb when possible
+  * this had issues and allowed placing orbs too close
+
+* (optional) find better ui sounds
+  * darker
+
+* (optional) use svg file instead of png for icon
+
+## Tasks for Paul `:-)`
+
+* [ ] mobile support?
+* [ ] place approaching tiles automatically
+* [ ] improve tilemap system
+* [ ] help fixing font issues
+
+## Testing
+
+* [ ] how long can one survive
+  * 2:15 is possible
+    * place orbs close to darkness
+    * orbs should break often so that we can place many orbs
+
+* [ ] messages should be adapted
+  * depends on expected time when doing nothing
+  * depends on difficulties
+
+## To discuss
+
+* [ ] name for game
+* [ ] difficulties
 
 ## Issues
 
@@ -45,6 +76,8 @@
 * [ ] game should work in browser
 
 ## Design ideas
+
+* [ ] is clicking wildly to place orbs a good idea?
 
 * place orbs only at beginning
   * place orbs strategically
@@ -70,18 +103,23 @@
 * lightness
 * luminous
 * eclipse
+* orb
 
 ## Itch
 
 * [ ] prepare game page
 * [ ] screenshots (very late)
+  * before start
+  * mid game
+  * late game
+  * end game screen
 * [ ] gifs of game
   * show how placing orbs looks like
   * show how darkness spreads
 * [ ] description
   * [ ] rules
   * [ ] goal
-  * Small puzzle game where you place light orbs to slow down darkness from spreading.
+  * Small puzzle/tower defense game where you place light orbs to slow down darkness from spreading.
 
 ## Later
 
@@ -107,18 +145,7 @@
 
 ## Implementation
 
-* tilemap for ground and darkness
-* objects need to detect what's below them
-  * collisions for darkness tilemap
-* remember border tiles for creation of new tiles
-  * set tile `set_cells_terrain_connect`
-  * use 4 `custom_data_layers` to tell which adjacent tiles are allowed for new darkness tiles
-    * `north`, `east`, `south`, `west`
-
 ### Orb placing
-
-* [ ] detect collisions when placing orbs
-* [ ] orbs should not be too close to other orbs
 
 * [ ] orb placing with cursor
   * hold/press key
@@ -126,63 +153,7 @@
   * click somewhere
     * detect collisions
 
-* [ ] child node of map
-  * [x] detects when mouse clicked
-  * [ ] checks for collisions
-    * with tilemap
-    * with other orbs
-  * places orb at that coordinates
-
-### Orb scene
-
-* inherit
-* script
-  * `_on_darkness_entered`
-    * `queue_free`
-    * tween
-* export vars for
-  * [x] color
-    * orb and light
-    * single modulate for sprite color and light color
-  * [x] size
-    * orb and light
-  * [ ] strength
-    * stronger on closer tiles
-    * more range
-    * pulsing strength
-* orb types
-* `core`
-* `small_orb`
-
 ### Tilemap
-
-* [ ] approaching tiles should not look like a rectangle
-
-* [ ] wait until all tiles are set
-  * then, emit `arrived`
-
-* [ ] scenes as tiles?
-  * for both, approaching and darkness
-  * static body with one pixel collision shape
-    * activated, when arrived
-  * child area2d for detecting number of orbits
-  * approach themselves
-    * every random time
-    * by random value depending on number of detected orbits
-  * have approaching value that determines alpha of modulate
-  * emit signal when arrived
-    * only neighboring tiles connect to this signal and start approaching
-
-* single pixel tiles
-  * 2 types
-    * `approaching`
-      * modulate changes
-        * alpha from 0 to 1
-      * changes to `finished`
-      * (optional) animation when finished
-    * `arrived`
-      * collision shape
-      * neighbors can approach
 
 * [ ] place darkness tiles by hand
   * for each difficulty map
@@ -191,7 +162,7 @@
 ## UI
 
 * [ ] display at same position (top center)
-  * `orbs left: #`
+  * `orbs: 5/10`, `orbs: 10` (number in red when reached)
   * `start`
   * time
 
@@ -215,72 +186,18 @@
   * e.g. 5 height
   * monospace
 
-## Game design
-
-* [ ] buy orbs
-  * with what resource?
-* [ ] buy cursor orb
-  * [ ] or upgrade cursor orb
-
 ## Difficulty
 
 * ~~weaker orbs~~
 * more initial black tiles
 * ~~size of map~~
 * different background color
+* more cores
+* already placed orbs at bad positions
+  * close to center
+* random difficulty
 
 ## Graphics
 
-* gem
-* darkness
-  * animated
-  * 4 frames
-  * only darkness (no ground)
-* background
-  * with light possible
-* glitch effects?
-* protective _things_
-* light effects
-* ground/floor with variation
-* darkness with variation
-
-## Sound
-
-* [ ] dark ambient background sound
-* [ ] intensifying darkness sound
-
-### Effects
-
-* [ ] placing orb
-* [ ] destroying orb
-  * glass shatter
-* [ ] pulsating orb
-
-## Credits
-
-* font
-* audio
-* Godot
-
-## Themes
-
-* Invasion
-* Catch ‘Em All
-* Opposite Day
-* Cooperation
-  * tower defense
-* Glitch In The Matrix
-* Wildfire
-* Recursive
-* Creation Story
-* But Does It Float?
-  * platformer
-  * stone
-    * weak against water
-    * is thrown away when hit by other monsters
-  * goal
-    1. reach end of level
-      * gain float ability 
-    2. run back
-      * timer?
-* Hidden In Plain Sight
+* (optional) glitch effects?
+* (optional) background with variation
