@@ -1,6 +1,8 @@
 class_name Orb
 extends StaticBody2D
 
+signal orb_broken
+
 @export var energy: int = 1: set = set_energy
 @export var color: Color = Color.WHITE: set = set_color
 
@@ -52,4 +54,5 @@ func _on_darkness_entered(_body: Node2D) -> void:
 	await get_tree().create_timer(0.05).timeout
 	point_light_2d.energy = energy
 	await get_tree().create_timer(0.1).timeout
+	orb_broken.emit()
 	queue_free()
