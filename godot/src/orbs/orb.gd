@@ -38,8 +38,8 @@ func set_color(_color: Color) -> void:
 func set_energy(val: int) -> void:
 	energy = val
 	await ready
-	point_light_2d.energy = float(val) / 20
-	animation_player.speed_scale = float(val) / 10
+	point_light_2d.energy = val / 20.0
+	animation_player.speed_scale = val / 10.0
 	point_light_2d.texture.width = 8 * val
 	point_light_2d.texture.height = 8 * val
 
@@ -47,6 +47,11 @@ func set_energy(val: int) -> void:
 func _on_darkness_entered(_body: Node2D) -> void:
 	darkness_detector.body_entered.disconnect(_on_darkness_entered)
 	orbits.queue_free()
-	await create_tween().tween_property(point_light_2d, "energy", 0, energy).finished
-	# TODO add puff animation
+	animation_player.queue_free()
+	point_light_2d.energy = 0
+	await get_tree().create_timer(0.05).timeout
+	point_light_2d.energy = energy
+	await get_tree().create_timer(0.1).timeout
+	point_light_2d.queue_free()
+	await get_tree().create_timer(1).timeout
 	queue_free()
