@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cu10jyb0dvxau"]
+[gd_scene load_steps=8 format=3 uid="uid://cu10jyb0dvxau"]
 
 [ext_resource type="Script" path="res://src/maps/cursor.gd" id="1_qroaa"]
 [ext_resource type="Texture2D" uid="uid://ct4o8ixctiaa7" path="res://assets/orbs/small.tres" id="2_gqqel"]
+[ext_resource type="AudioStream" uid="uid://dw8num1d2tjxn" path="res://sound/effects/orb_placement.ogg" id="3_cbjws"]
+[ext_resource type="AudioStream" uid="uid://54hdvf718y24" path="res://sound/effects/orb_placement_failed.ogg" id="4_5w04h"]
 
 [sub_resource type="Gradient" id="Gradient_hy5uw"]
 offsets = PackedFloat32Array(0, 0.6)
@@ -35,3 +37,15 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionDetector"]
 shape = SubResource("CircleShape2D_frn2k")
+
+[node name="AudioStreamPlayerPlaceOrb" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_cbjws")
+max_distance = 64.0
+attenuation = 2.0
+max_polyphony = 15
+
+[node name="AudioStreamPlayerFailed" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_5w04h")
+max_distance = 64.0
+attenuation = 2.0
+max_polyphony = 15
