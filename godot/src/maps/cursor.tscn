@@ -54,10 +54,7 @@ attenuation = 2.0
 max_polyphony = 15
 bus = &"SoundEffects"
 
-[node name="AudioStreamPlayerFailed" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayerFailed" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_5w04h")
-volume_db = 10.0
-max_distance = 64.0
-attenuation = 2.0
 max_polyphony = 15
 bus = &"SoundEffects"

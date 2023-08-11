@@ -7,7 +7,7 @@ signal place_orb(position)
 @onready var orb_detector: Area2D = $OrbDetector
 @onready var darkness_detector: Area2D = $DarknessDetector
 @onready var audio_stream_player_place_orb: AudioStreamPlayer2D = $AudioStreamPlayerPlaceOrb
-@onready var audio_stream_player_failed: AudioStreamPlayer2D = $AudioStreamPlayerFailed
+@onready var audio_stream_player_failed: AudioStreamPlayer = $AudioStreamPlayerFailed
 
 
 func _process(delta: float) -> void:
