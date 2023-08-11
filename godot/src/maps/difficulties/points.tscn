@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://ode4i8y5wltj"]
+[gd_scene load_steps=3 format=3 uid="uid://ode4i8y5wltj"]
 
 [ext_resource type="PackedScene" uid="uid://dhwpbwves76gi" path="res://src/maps/difficulties/default.tscn" id="1_sm6gl"]
+[ext_resource type="Texture2D" uid="uid://cqudyitlyyjol" path="res://assets/background/explosion.tres" id="2_eqkmd"]
 
 [node name="3" instance=ExtResource("1_sm6gl")]
+
+[node name="Background" parent="." index="0"]
+texture = ExtResource("2_eqkmd")
 
 [node name="Core" parent="Orbs" index="0"]
 position = Vector2(24, 40)

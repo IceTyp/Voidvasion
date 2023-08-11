@@ -1,20 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhwpbwves76gi"]
+[gd_scene load_steps=12 format=3 uid="uid://dhwpbwves76gi"]
 
 [ext_resource type="Script" path="res://src/maps/map.gd" id="1_0h21x"]
 [ext_resource type="PackedScene" uid="uid://cu10jyb0dvxau" path="res://src/maps/cursor.tscn" id="2_h0ghx"]
+[ext_resource type="Texture2D" uid="uid://clgflfdk1awca" path="res://assets/background/gray.tres" id="2_tpnd3"]
 [ext_resource type="Script" path="res://src/maps/orb_placing.gd" id="3_88ljh"]
 [ext_resource type="PackedScene" uid="uid://olw5saaxm5rm" path="res://src/orbs/core.tscn" id="4_gr6yd"]
 [ext_resource type="PackedScene" uid="uid://ctelatmnjy16n" path="res://src/tiles/arrived_tile.tscn" id="5_kbcn3"]
 [ext_resource type="PackedScene" uid="uid://csbl7cdky8pmi" path="res://src/tiles/darkness_tile.tscn" id="6_my2kv"]
 [ext_resource type="PackedScene" uid="uid://gu2328w2x2tp" path="res://src/user_interface/game_menu.tscn" id="7_x7jl6"]
 [ext_resource type="AudioStream" uid="uid://phedwbqdln88" path="res://sound/background/darkness.ogg" id="8_eveyf"]
-
-[sub_resource type="Gradient" id="Gradient_0k53b"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.32549, 0.32549, 0.32549, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_7xfn3"]
-gradient = SubResource("Gradient_0k53b")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_cyeso"]
 scenes/1/scene = ExtResource("5_kbcn3")
@@ -29,7 +23,7 @@ script = ExtResource("1_0h21x")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(32, 32)
-texture = SubResource("GradientTexture2D_7xfn3")
+texture = ExtResource("2_tpnd3")
 
 [node name="Cursor" parent="." instance=ExtResource("2_h0ghx")]
 
