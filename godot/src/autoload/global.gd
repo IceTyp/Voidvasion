@@ -9,7 +9,10 @@ const max_orb_number := 15
 var main_menu: Control
 var current_map: Node2D
 var maps := [
-	preload("res://src/maps/map.tscn"),
+	preload("res://src/maps/difficulties/default.tscn"),
+	preload("res://src/maps/difficulties/1.tscn"),
+	preload("res://src/maps/difficulties/double_core.tscn"),
+	preload("res://src/maps/difficulties/points.tscn"),
 ]
 var orb_counter := 0
 var orbs_placed := 0
