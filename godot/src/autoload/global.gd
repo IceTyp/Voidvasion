@@ -52,6 +52,7 @@ func _on_orb_broken() -> void:
 
 
 func _on_core_broken() -> void:
+	await get_tree().create_timer(.5).timeout
 	get_tree().paused = true
 	game_ended.emit()
 
