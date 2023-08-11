@@ -58,7 +58,7 @@ offset_top = -3.5
 offset_bottom = 3.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "> Start <"
+text = "Start"
 script = ExtResource("3_wd2ni")
 
 [node name="OrbCounter" type="Label" parent="VBoxContainer/TextureRect"]

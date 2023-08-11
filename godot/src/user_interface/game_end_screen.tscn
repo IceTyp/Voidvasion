@@ -56,12 +56,12 @@ alignment = 2
 
 [node name="ButtonNewGame" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "-Try Again-"
+text = "Try Again"
 
 [node name="ButtonCopy" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-text = "> Copy <"
+text = "Copy"
 
 [node name="ButtonQuit" parent="." instance=ExtResource("4_gjsl7")]
 layout_mode = 1

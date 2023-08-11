@@ -2,7 +2,7 @@ extends Control
 
 signal difficulty_selected(difficulty)
 
-@onready var v_box_container: VBoxContainer = $VBoxContainer
+@onready var difficulties_container: VBoxContainer = %DifficultiesContainer
 @onready var mouse_blocker: ColorRect = $MouseBlocker
 
 
@@ -11,8 +11,8 @@ func _ready() -> void:
 	visibility_changed.connect(_on_visibility_changed)
 	Global.main_menu = self
 	
-	for i in range(v_box_container.get_child_count()):
-		(v_box_container.get_child(i) as Button).pressed.connect(_on_button_difficulty_pressed.bind(i))
+	for i in range(difficulties_container.get_child_count()):
+		(difficulties_container.get_child(i) as Button).pressed.connect(_on_button_difficulty_pressed.bind(i))
 
 
 func _on_button_difficulty_pressed(difficulty: int) -> void:
