@@ -3,12 +3,12 @@ extends Control
 signal new_game_requested
 
 const messages := {
-	0: "Improvable",
-	70: "Not Bad!",
-	90: "Brilliant",
-	110: "Glowing Effort!",
-	120: "Radiant Stand!",
-	130: "Guiding Light!",
+	0: "Flicker of Hope!",
+	120: "Glowing Effort!",
+	140: "Guiding Light!",
+	160: "Radiant Stand!",
+	180: "Luminous Resilience!",
+	200: "Resolute Spirit!",
 }
 
 var result := "No message...": set = update_result
@@ -28,8 +28,13 @@ func _ready() -> void:
 func update_result(val: String) -> void:
 	result = val
 	rich_text_label.text = (
-		"[center][color=#ce643b][ghost]%s[/ghost][/color][/center]\nOrbs: %s" % [result, Global.orbs_placed]
+		"[center][color=#ce643b][ghost]%s[/ghost][/color][/center]\nOrbs: %s\n%s" % [
+				result,
+				Global.orbs_placed,
+				Global.chosen_difficulty
+		]
 	)
+
 
 func _on_game_ended() -> void:
 	for key in messages.keys():
@@ -46,9 +51,10 @@ func _on_game_ended() -> void:
 
 func _on_button_copy_pressed() -> void:
 	DisplayServer.clipboard_set(
-		"%s\nYou survived %s seconds and used %s orb%s." % [
+		"%s\nYou survived %s seconds on %s and used %s orb%s." % [
 				result,
 				Global.seconds,
+				Global.chosen_difficulty.to_upper(),
 				Global.orbs_placed,
 				"" if Global.orbs_placed == 1 else "s"
 		]

@@ -8,14 +8,15 @@ const max_orb_number := 15
 
 var current_map: Node2D
 var difficulties := {
-	"dusk": preload("res://src/maps/difficulties/default.tscn"),
-	"nightmare": preload("res://src/maps/difficulties/1.tscn"),
-	"horror": preload("res://src/maps/difficulties/double_core.tscn"),
+	"normal": preload("res://src/maps/difficulties/default.tscn"),
+	"hard": preload("res://src/maps/difficulties/1.tscn"),
+	"nightmare": preload("res://src/maps/difficulties/double_core.tscn"),
 	"chaos": preload("res://src/maps/difficulties/points.tscn"),
 }
 var orb_counter := 0
 var orbs_placed := 0
 var seconds := 0
+var chosen_difficulty: String
 
 
 func _ready() -> void:
@@ -25,6 +26,7 @@ func _ready() -> void:
 func load_map(id: String) -> void:
 	orb_counter = 0
 	orbs_placed = 0
+	chosen_difficulty = id
 	current_map = difficulties[id].instantiate()
 	get_tree().get_root().add_child(current_map)
 	get_tree().paused = false
