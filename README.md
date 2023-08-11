@@ -1,19 +1,24 @@
 # Darkness TODO find better name
 
-Thanks for playing!
+Thanks for downloading our game!
 
 ## Controls
 
-TODO
+Use your mouse to place orbs.
+Press "START" when you are finished.
+You can also place orbs during the game but you cannot have more than 15 orbs at a time.
 
-* place orbs by using the mouse
+The game is over when one of your cores (orange orbs) breaks. How long can you survive?
+
+## Tactical tips
+
+Try to place as many orbs as possible. If orbs are destroyed, you can place new orbs. Place orbs close to darkness so that they get destroyed sooner. 
 
 ## Credits
 
 Game by [Arytherias](https://arytherias.itch.io/) and [greenp42](https://github.com/greenp42).
 
-Many thanks to the open source software available for creating games.
-[Godot game engine](https://godotengine.org/) (version 3.5.2) has been used to develop this game.
+This game has been developed with [Godot game engine](https://godotengine.org/) version 4.1.1.
 (See also https://godotengine.org/license)
 
 The used font is Silkscreen from [The Silkscreen Project Authors](https://github.com/googlefonts/silkscreen).

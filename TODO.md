@@ -1,23 +1,10 @@
 # TODO
 
-* [ ] define orange color for buttons and message once
+* [ ] fix game end message
 
-* [ ] improve end game screen
-  * copy button is ugly
-  * maybe use `()` or `-NEW GAME-` for buttons
+* [ ] difficulty nightmare is too bright
 
-* [ ] design different maps for difficulties
-  * default
-    * [ ] center orb on tilemap
-    * [ ] remove weird black tiles
-
-* [ ] button script should also add `> <` to all buttons
-
-* [ ] find names for end game messages
-
-* [ ] find names for difficulties
-  * [ ] should fit theme
-    * [ ] which theme?
+* [ ] define orange color for buttons and message and heading... once
 
 * [ ] improve ui theme
   * [ ] issues with spacing above and below
@@ -25,18 +12,29 @@
     * button
   * [ ] issue when centering text with odd number of pixels in width
 
-* [ ] allow placing more orbs when some are broken?
+## Blockers
 
-* (optional) improve export script by allowing export for windows, linux and web
+* [ ] weird font issue
+* [ ] game name
+  * also check if it already exists
+
+## Optional
+
+* [ ] different sound/animation when core breaks
+
+* [ ] improve end game screen
+  * copy button is ugly
+
+* improve export script by allowing export for windows, linux and web
   * fix it
 
-* (optional) drag mouse to place orb when possible
+* drag mouse to place orb when possible
   * this had issues and allowed placing orbs too close
 
-* (optional) find better ui sounds
+* find better ui sounds
   * darker
 
-* (optional) use svg file instead of png for icon
+* use svg file instead of png for icon
 
 ## Tasks for Paul `:-)`
 
@@ -48,7 +46,7 @@
 ## Testing
 
 * [ ] how long can one survive
-  * 2:15 is possible
+  * 3:00 is possible
     * place orbs close to darkness
     * orbs should break often so that we can place many orbs
 
@@ -56,10 +54,25 @@
   * depends on expected time when doing nothing
   * depends on difficulties
 
+* without pushing already approaching tiles
+  * 1:53
+  * 1:38
+  * 1:30
+  * 1:22, 1:18
+
+* with push already approaching tiles
+  * 1:11
+  * 1:02
+  * 1:04
+  * 1:03
+
 ## To discuss
 
 * [ ] name for game
+* [ ] readme
 * [ ] difficulties
+* [ ] make game available on GitHub?
+  * protect master branch
 
 ## Issues
 
@@ -96,30 +109,46 @@
 
 ## Game name
 
-* darkness
-* light
-* light into darkness
-* invasion
-* lightness
-* luminous
-* eclipse
 * orb
+* luminous
+* luminary
+* lumen
+* lux
+* radiant
+
+* eclipse
+* excidium
+* darkness
+* gloom
+* ~~shade~~
+* ~~shadow~~
+* ~~nocturne~~
+
+* invasion
+
+* luminorb
+
 
 ## Itch
 
-* [ ] prepare game page
+* [ ] game page
+  * [ ] description
+    * [ ] add from readme
+    * [ ] rules
+    * [ ] goal
+  * [ ] `Feel free to post your result in the comments section.`
+* [ ] short description
+  * Short tower defense game where you place orbs to slow down darkness.
 * [ ] screenshots (very late)
   * before start
   * mid game
   * late game
   * end game screen
+* [ ] trailer
+  * just record game
 * [ ] gifs of game
   * show how placing orbs looks like
   * show how darkness spreads
-* [ ] description
-  * [ ] rules
-  * [ ] goal
-  * Small puzzle/tower defense game where you place light orbs to slow down darkness from spreading.
 
 ## Later
 
@@ -145,14 +174,6 @@
 
 ## Implementation
 
-### Orb placing
-
-* [ ] orb placing with cursor
-  * hold/press key
-    * 1, 2, 3
-  * click somewhere
-    * detect collisions
-
 ### Tilemap
 
 * [ ] place darkness tiles by hand
@@ -160,25 +181,6 @@
 * [ ] place approaching tiles automatically
 
 ## UI
-
-* [ ] display at same position (top center)
-  * `orbs: 5/10`, `orbs: 10` (number in red when reached)
-  * `start`
-  * time
-
-* [ ] start darkness (and timer) button
-  * `turn off light`
-  * `summon darkness`
-
-* [ ] game end screen with text and `copy` button
-  * display
-    * Congratulations, you lost!
-    * Can you survive longer?
-    * You can paste your result in the comments!
-    * time
-    * difficulty
-    * orb positions?
-    * `copy` button
 
 * (optional) pause game
 
@@ -188,14 +190,12 @@
 
 ## Difficulty
 
-* ~~weaker orbs~~
-* more initial black tiles
-* ~~size of map~~
-* different background color
-* more cores
-* already placed orbs at bad positions
+* [x] more initial black tiles
+* [x] different background color
+* [x] more cores
+* [ ] already placed orbs at bad positions
   * close to center
-* random difficulty
+* [ ] random difficulty
 
 ## Graphics
 
