@@ -13,8 +13,8 @@ const messages := {
 
 var result := "No message...": set = update_result
 
-@onready var rich_text_label: RichTextLabel = $RichTextLabel
-@onready var button_new_game: Button = $VBoxContainer/ButtonNewGame
+@onready var rich_text_label: RichTextLabel = %RichTextLabel
+@onready var button_new_game: Button = %ButtonNewGame
 @onready var mouse_blocker: ColorRect = $MouseBlocker
 
 
