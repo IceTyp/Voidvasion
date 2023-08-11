@@ -27,3 +27,6 @@ texture = SubResource("GradientTexture2D_fwu0h")
 
 [node name="AnimationPlayer" parent="." index="5"]
 speed_scale = 0.6
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." index="7"]
+current = true
