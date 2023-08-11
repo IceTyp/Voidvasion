@@ -6,14 +6,13 @@ signal orb_count_changed
 
 const max_orb_number := 15
 
-var main_menu: Control
 var current_map: Node2D
-var maps := [
-	preload("res://src/maps/difficulties/default.tscn"),
-	preload("res://src/maps/difficulties/1.tscn"),
-	preload("res://src/maps/difficulties/double_core.tscn"),
-	preload("res://src/maps/difficulties/points.tscn"),
-]
+var difficulties := {
+	"dusk": preload("res://src/maps/difficulties/default.tscn"),
+	"nightmare": preload("res://src/maps/difficulties/1.tscn"),
+	"horror": preload("res://src/maps/difficulties/double_core.tscn"),
+	"chaos": preload("res://src/maps/difficulties/points.tscn"),
+}
 var orb_counter := 0
 var orbs_placed := 0
 var seconds := 0
@@ -23,19 +22,16 @@ func _ready() -> void:
 	get_tree().paused = true
 
 
-func load_map(difficulty: int) -> void:
+func load_map(id: String) -> void:
 	orb_counter = 0
 	orbs_placed = 0
-	if len(maps) > difficulty:
-		current_map = maps[difficulty].instantiate()
-		get_tree().get_root().add_child(current_map)
-		get_tree().paused = false
-	else:
-		show_main_menu()
+	current_map = difficulties[id].instantiate()
+	get_tree().get_root().add_child(current_map)
+	get_tree().paused = false
 
 
 func show_main_menu() -> void:
-	main_menu.show()
+	MainMenu.show()
 	if is_instance_valid(current_map):
 		current_map.queue_free()
 

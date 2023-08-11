@@ -9,18 +9,20 @@ signal difficulty_selected(difficulty)
 func _ready() -> void:
 	difficulty_selected.connect(Global.load_map)
 	visibility_changed.connect(_on_visibility_changed)
-	Global.main_menu = self
 	
-	for i in range(difficulties_container.get_child_count()):
-		(difficulties_container.get_child(i) as Button).pressed.connect(_on_button_difficulty_pressed.bind(i))
+	for key in Global.difficulties:
+		var button := Button.new()
+		button.text = key
+		button.pressed.connect(_on_button_difficulty_pressed.bind(key))
+		difficulties_container.add_child(button)
 
 
-func _on_button_difficulty_pressed(difficulty: int) -> void:
+func _on_button_difficulty_pressed(id: String) -> void:
 	mouse_blocker.show()
 	get_viewport().gui_release_focus()
 	await create_tween().tween_property(self, "modulate", Color(0, 0, 0, 1), 0.5).finished
 	hide()
-	difficulty_selected.emit(difficulty)
+	difficulty_selected.emit(id)
 
 
 func _on_visibility_changed() -> void:

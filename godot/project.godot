@@ -17,8 +17,9 @@ config/icon="res://icon.png"
 
 [autoload]
 
-UiSounds="*res://src/autoload/button_updater.gd"
 Global="*res://src/autoload/global.gd"
+MainMenu="*res://src/user_interface/main_menu.tscn"
+UiSounds="*res://src/autoload/button_updater.gd"
 
 [display]
 

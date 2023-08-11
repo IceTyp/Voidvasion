@@ -8,11 +8,12 @@ extends Node
 
 func _ready() -> void:
 	get_tree().get_root().child_entered_tree.connect(update_buttons)
-	update_buttons(get_tree().get_root())
 	for key in sounds.keys():
 		add_child(sounds[key])
 		sounds[key].stream = load("res://sound/ui/%s.ogg" % key)
 		sounds[key].bus = "UI"
+	await MainMenu.draw
+	update_buttons(get_tree().get_root())
 
 
 func update_buttons(node: Node) -> void:
