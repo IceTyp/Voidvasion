@@ -32,16 +32,16 @@ func update_result(val: String) -> void:
 	)
 
 func _on_game_ended() -> void:
-	modulate = Color(1, 1, 1, 0)
-	mouse_blocker.show()
-	show()
-	await create_tween().tween_property(self, "modulate", Color(1, 1, 1, 1), 1)
-	mouse_blocker.hide()
 	for key in messages.keys():
 		if key < Global.seconds:
 			result = messages[key]
 		else:
 			break
+	modulate = Color(1, 1, 1, 0)
+	mouse_blocker.show()
+	show()
+	await create_tween().tween_property(self, "modulate", Color(1, 1, 1, 1), 1).finished
+	mouse_blocker.hide()
 
 
 func _on_button_copy_pressed() -> void:
