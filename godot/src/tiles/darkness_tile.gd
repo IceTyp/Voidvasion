@@ -28,17 +28,12 @@ func _ready() -> void:
 
 
 func start_approach() -> void:
-	match state:
-		States.ARRIVED:
-			return
-		States.APPROACHING:
+	if state == States.WAITING:
+		state = States.APPROACHING
+		while darkness_level < 1:
+			await get_tree().create_timer(randf_range(.5, 2)).timeout
 			approach()
-		States.WAITING:
-			state = States.APPROACHING
-			while darkness_level < 1:
-				await get_tree().create_timer(randf_range(.5, 2)).timeout
-				approach()
-			emit_signal("arrived")
+		emit_signal("arrived")
 
 
 func approach() -> void:
