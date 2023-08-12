@@ -30,6 +30,8 @@ script = ExtResource("1_qroaa")
 texture = ExtResource("2_gqqel")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.478431, 1, 0.643137, 1)
+energy = 3.0
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_ih77w")
 
