@@ -1,24 +1,24 @@
-[gd_resource type="RichTextEffect" script_class="RichTextSpecial" load_steps=2 format=3 uid="uid://bx8rdskpu4vq1"]
+[gd_resource type="RichTextEffect" script_class="RichTextGhost" load_steps=2 format=3 uid="uid://clswmu8npdpvv"]
 
-[sub_resource type="GDScript" id="GDScript_w5wy1"]
+[sub_resource type="GDScript" id="GDScript_omp4p"]
 script/source = "@tool
 extends RichTextEffect
-class_name RichTextSpecial
+class_name RichTextGhost
 
 # Syntax: [ghost freq=5.0 span=10.0][/ghost]
 
-# Define the tag name.
 var bbcode = \"ghost\"
 
-func _process_custom_fx(char_fx):
-	# Get parameters, or use the provided default value if missing.
-	var speed = char_fx.env.get(\"freq\", -5.0)
-	var span = char_fx.env.get(\"span\", 10.0)
 
-	var alpha = sin(char_fx.elapsed_time * speed + (char_fx.range.x / span)) * 0.5 + 0.5
-	char_fx.color.a = alpha
-	return true
+func _process_custom_fx(char_fx):
+    # Get parameters, or use the provided default value if missing.
+    var speed = char_fx.env.get(\"freq\", 5.0)
+    var span = char_fx.env.get(\"span\", 10.0)
+
+    var alpha = sin(char_fx.elapsed_time * speed + (char_fx.range.x / span)) * 0.5 + 0.5
+    char_fx.color.a = alpha
+    return true
 "
 
 [resource]
-script = SubResource("GDScript_w5wy1")
+script = SubResource("GDScript_omp4p")

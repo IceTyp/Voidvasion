@@ -28,7 +28,7 @@ func _ready() -> void:
 func update_result(val: String) -> void:
 	result = val
 	rich_text_label.text = (
-		"[center][color=#ce643b][ghost]%s[/ghost][/color][/center]\nOrbs: %s\n%s" % [
+		"[center][color=#ce643b][ghost freq=-4, span=3]%s[/ghost][/color][/center]\nOrbs: %s\n%s" % [
 				result,
 				Global.orbs_placed,
 				Global.chosen_difficulty
