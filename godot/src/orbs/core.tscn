@@ -22,11 +22,7 @@ color = Color(1, 0.717647, 0.47451, 1)
 
 [node name="PointLight2D" parent="." index="1"]
 color = Color(0.611765, 0.372549, 1, 1)
-energy = 0.3
 texture = SubResource("GradientTexture2D_fwu0h")
 
 [node name="AnimationPlayer" parent="." index="5"]
 speed_scale = 0.6
-
-[node name="AudioListener2D" type="AudioListener2D" parent="." index="7"]
-current = true
