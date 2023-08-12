@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ck1aacinn3fx2"]
+[gd_scene load_steps=13 format=3 uid="uid://ck1aacinn3fx2"]
 
 [ext_resource type="Script" path="res://src/orbs/orb.gd" id="1_13i6o"]
 [ext_resource type="Texture2D" uid="uid://ct4o8ixctiaa7" path="res://assets/orbs/small.tres" id="2_8dqoy"]
@@ -84,10 +84,28 @@ tracks/1/keys = {
 }
 tracks/1/use_blend = true
 
+[sub_resource type="Animation" id="Animation_mt6iv"]
+resource_name = "super_nova"
+length = 0.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 10.0, 0.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a88b0"]
 _data = {
 "pulsating": SubResource("Animation_j4je1"),
-"shatter": SubResource("Animation_dqq58")
+"shatter": SubResource("Animation_dqq58"),
+"super_nova": SubResource("Animation_mt6iv")
 }
 
 [node name="Orb" type="StaticBody2D"]
@@ -99,7 +117,7 @@ script = ExtResource("1_13i6o")
 texture = ExtResource("2_8dqoy")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-energy = 2.0
+energy = 0.0
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_tgoke")
 
