@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://blyg4536s56p8"]
+[gd_scene load_steps=5 format=3 uid="uid://blyg4536s56p8"]
 
 [ext_resource type="Theme" uid="uid://b80yagb12wjpq" path="res://assets/theme/ui_theme.tres" id="1_88vo1"]
 [ext_resource type="Script" path="res://src/user_interface/main_menu.gd" id="2_fnyqp"]
-[ext_resource type="FontFile" uid="uid://cououee6e731f" path="res://assets/theme/Silkscreen/Silkscreen-Bold.ttf" id="2_xq8rd"]
 [ext_resource type="PackedScene" uid="uid://d366ijltpt61g" path="res://src/user_interface/button_quit.tscn" id="4_x1yb3"]
 [ext_resource type="Script" path="res://src/user_interface/label_version.gd" id="5_vxa2a"]
 
@@ -39,14 +38,15 @@ alignment = 1
 layout_mode = 2
 theme_type_variation = &"Header"
 theme_override_colors/font_color = Color(0.807843, 0.392157, 0.231373, 1)
-theme_override_fonts/font = ExtResource("2_xq8rd")
-text = "Resilience"
+text = "=voidvasion="
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="DifficultiesContainer" type="VBoxContainer" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+alignment = 1
 
 [node name="ButtonQuit" parent="VBoxContainer" instance=ExtResource("4_x1yb3")]
 layout_mode = 2
