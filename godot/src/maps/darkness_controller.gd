@@ -1,61 +1,44 @@
 extends Node
 
-const ALL_NEIGHBOR_SIDES = [
-	TileSet.CELL_NEIGHBOR_RIGHT_SIDE, 
-	TileSet.CELL_NEIGHBOR_BOTTOM_SIDE,
-	TileSet.CELL_NEIGHBOR_LEFT_SIDE,
-	TileSet.CELL_NEIGHBOR_TOP_SIDE,
-]
 const TILEMAP_LAYER = 0
+const TILESET_SRC_ID = 0
+const DARKNESS_ALT_TILE_ID = 2
 
-@export var approaching_tiles_atlas_coords: Array[Vector2i] = [Vector2i(0, 0)]
-@export var map_size = Vector2i(64, 64)
+
 @export_node_path("TileMap") var tile_map_path := ^".."
+@export var upper_left_corner := Vector2i(0, 7)
+@export var lower_right_corner := Vector2i(63, 63)
 
 @onready var tile_map := get_node(tile_map_path) as TileMap
 
 
 func _ready() -> void:
+	fill_empty_cells(DARKNESS_ALT_TILE_ID)
+
+
+## fills all cells which are empty (not in used cells) with tiles of the given
+## tile_alt_id
+## only fills cells between the `upper_left_corner` and the `lower_right_corner`
+##
+## param tile_alt_id: the alternative_tile id of the tile used for filling
+func fill_empty_cells(alt_tile_id: int) -> void:
 	var used_cells := tile_map.get_used_cells(TILEMAP_LAYER)
 	used_cells.sort()
 	
-#	for cell in used_cells:
-#		var atlas_coord := tile_map.get_cell_atlas_coords(TILEMAP_LAYER, cell)
-#		if atlas_coord in approaching_tiles_atlas_coords:
-#			print("cell ", cell, " is approaching")
+	for cell in used_cells:
+		upper_left_corner.x = mini(upper_left_corner.x, cell.x)
+		upper_left_corner.y = mini(upper_left_corner.y, cell.y)
+		lower_right_corner.x = maxi(lower_right_corner.x, cell.x)
+		lower_right_corner.y = maxi(lower_right_corner.y, cell.y)
 
-	for coord in get_edge_darkness_coords():
-		print("cell ", coord, " has approaching neighbor")
-
-
-## returns all coords of cells that have at least one neighbor being not darkness
-func get_edge_darkness_coords() -> Array[Vector2i]:
-	var darkness_cells: Array[Vector2i] = []
-	for x in map_size.x:
-		for y in map_size.y:
-			var coord := Vector2i(x, y)
-			if not is_cell_darkness(coord):
-				continue
-			var has_empty_neighbor := false
-			for neighbor_coord in get_all_neighbors(coord):
-				if not is_cell_darkness(neighbor_coord):
-					has_empty_neighbor = true
-					break
-			if has_empty_neighbor:
-				darkness_cells.append(coord)
-	return darkness_cells
-
-
-## returns if the cell at coord is a darkness cell
-func is_cell_darkness(coord: Vector2i) -> bool:
-	if tile_map.get_cell_tile_data(TILEMAP_LAYER, coord) == null:
-		return false
-	return tile_map.get_cell_atlas_coords(TILEMAP_LAYER, coord) not in approaching_tiles_atlas_coords
-
-
-## return the coordinates of all neigbors
-func get_all_neighbors(coord: Vector2i) -> Array[Vector2i]:
-	var ret: Array[Vector2i] = []
-	for neighbor_side in ALL_NEIGHBOR_SIDES:
-		ret.append(tile_map.get_neighbor_cell(coord, neighbor_side))
-	return ret
+	for x in range(upper_left_corner.x, lower_right_corner.x + 1):
+		for y in range(upper_left_corner.y, lower_right_corner.y + 1):
+			var coord := Vector2i(x,y)
+			if coord not in used_cells:
+				tile_map.set_cell(
+						TILEMAP_LAYER, 
+						coord, 
+						TILESET_SRC_ID, 
+						Vector2i.ZERO, 
+						alt_tile_id
+				)
