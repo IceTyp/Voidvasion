@@ -8,3 +8,4 @@
 *.ods#
 godot/movies/
 exports/
+test/

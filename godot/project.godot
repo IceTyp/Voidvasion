@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Lowrezjam 2023"
+config/name="Voidvasion"
 run/main_scene="res://src/user_interface/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.png"
