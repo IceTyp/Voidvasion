@@ -7,6 +7,7 @@ signal orb_count_changed
 const max_orb_number := 15
 
 var current_map: Node2D
+var main_menu: Control
 var difficulties := {
 	"normal": preload("res://src/maps/difficulties/default.tscn"),
 	"hard": preload("res://src/maps/difficulties/1.tscn"),
@@ -33,7 +34,7 @@ func load_map(id: String) -> void:
 
 
 func show_main_menu() -> void:
-	MainMenu.show()
+	main_menu.show()
 	if is_instance_valid(current_map):
 		current_map.queue_free()
 

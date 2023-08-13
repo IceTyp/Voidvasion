@@ -18,7 +18,6 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://src/autoload/global.gd"
-MainMenu="*res://src/user_interface/main_menu.tscn"
 ButtonUpdater="*res://src/autoload/button_updater.gd"
 
 [display]

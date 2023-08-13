@@ -17,7 +17,7 @@ grow_vertical = 2
 theme = ExtResource("1_88vo1")
 script = ExtResource("2_fnyqp")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,7 +40,7 @@ layout_mode = 2
 theme_type_variation = &"Header"
 theme_override_colors/font_color = Color(0.807843, 0.392157, 0.231373, 1)
 theme_override_fonts/font = ExtResource("2_xq8rd")
-text = "Orbclipse"
+text = "Resilience"
 horizontal_alignment = 1
 
 [node name="DifficultiesContainer" type="VBoxContainer" parent="VBoxContainer"]
