@@ -1,9 +1,8 @@
 extends Node
 
-const TILEMAP_LAYER = 0
-const TILESET_SRC_ID = 0
-const DARKNESS_ALT_TILE_ID = 2
-
+const TILEMAP_LAYER := 0
+const TILESET_SRC_ID := 0
+const DARKNESS_ALT_TILE_ID := 2
 
 @export_node_path("TileMap") var tile_map_path := ^".."
 @export var upper_left_corner := Vector2i(0, 7)
@@ -17,10 +16,10 @@ func _ready() -> void:
 
 
 ## fills all cells which are empty (not in used cells) with tiles of the given
-## tile_alt_id
+## alt_tile_id
 ## only fills cells between the `upper_left_corner` and the `lower_right_corner`
 ##
-## param tile_alt_id: the alternative_tile id of the tile used for filling
+## param alt_tile_id: the alternative_tile id of the tile used for filling
 func fill_empty_cells(alt_tile_id: int) -> void:
 	var used_cells := tile_map.get_used_cells(TILEMAP_LAYER)
 	used_cells.sort()
