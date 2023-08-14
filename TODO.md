@@ -1,30 +1,50 @@
 # TODO
 
-* [ ] add super nova animation for core when breaking
+* [ ] add email
+  * [ ] in readme
 
-* [ ] add license to repository
+* [ ] add readme with credits to itch?
 
-* [ ] improve ui theme
-  * [ ] issues with spacing above and below
-    * label
-    * button
-  * [ ] issue when centering text with odd number of pixels in width
+* [ ] make repository public
+  * protect master branch
+  * [ ] add license to repository
 
 ## Blockers
 
-* [ ] cover image
-  * [ ] for itch
-  * [ ] for video
-* [ ] weird font issue
-* [ ] game name
-  * check if it already exists
-  * change repository name
-  * change name on itch
+* [ ] devlog
+  * on lowrezjam community
+* [ ] release announcement
+  * Itch
+  * Telegram
+  * Godot Discord
+  * Reddit
 
 ## Devlog
 
-I'm proud to announce a game I made for Lowrezjam 2023.
-This game jam was definitely a great motivation to try something new. 
+This is our first game jam. We used Godot Game Engine (version 4.1.1) for this project.
+For our game, we decided to take the theme "Invasion". Our initial idea was to make a classical tower defense game. In the end, we made a game where one places orbs to delay a mysterious void.
+
+We had ideas for all different kinds of orbs. The issue was: How can we communicate this to the player?
+With the low resolution, making descriptions would 
+
+We also implemented several difficulties for this game to give it some replay value.
+and even a random mode TODO
+
+In the end, Lowrezjam was a great motivation to try something new and we learned a lot about Godot, lights and gradients.
+
+
+
+###
+
+I'm proud to announce our game Voidvasion which we made for Lowrezjam 2023.
+The game jam restricted the game to have a resolution of 64x64 or lower.
+This had some significant impacts on the game process. We initially planned to make a classical tower defense game where you place different towers and prevent something from invading. However, at this resolution, the map in the game would either have to be very small or the towers would need to occupy only a few pixels resulting in difficulties when doing graphics for them.
+So we came up with a different idea: Placing luminous objects to slow down darkness. I tried to create candles for this resolution but this didn't work out well. So I took even simpler objects which are just white squares emitting light. These are now the orbs that you place in the game.
+Next, we needed variations of orbs. We had many ideas. Orbs of different size, orbs that are stronger, and so on. We also planned to add an orb to the cursor of the mouse so that the player can delay darkness just by moving the cursor. But how could we communicate all those features to the player? With the small resolution, it is not trivial to add ingame descriptions. For our game, we chose a pixel font with a height of 5. With some patting around the text, this meant that the timer alone would occupy the top 7 rows of pixels on our screen.
+Adding descriptions would mean that we could only use a fraction of the map. Thus, adding ingame descriptions wasn't really an option. Therefore, we discarded those ideas. Of course, this meant that we had less strategic depth for our game in favor of a simpler game you get much easier into. This was the right decision and works well with how short the game length is.
+
+This game jam was definitely a great motivation to try something new and we learned a lot about Godot, light, gradient in the process.
+
 
 If you played my other game, you will see that this game is completely different.
 
@@ -37,7 +57,14 @@ It was definitely a great experience
 
 ## Release announcement
 
+TODO
+
 ## Optional
+
+* improve ui theme
+  * issues with spacing above and below
+    * label
+    * button
 
 * improve export script by allowing export for windows, linux and web
   * fix it
@@ -46,9 +73,11 @@ It was definitely a great experience
 
 * [ ] random maps
 
+* [ ] mobile support?
+
 ### Accessibility
 
-* [ ] when orb can be placed
+* when orb can be placed
   * highlight/pulsate number for orb
 
 * drag mouse to place orb when possible
@@ -56,14 +85,13 @@ It was definitely a great experience
 
 ### Improvements
 
-* [ ] different sound/animation when core breaks
+* differentiate core from other orbs
+  * different sound/animation when core breaks
+    * bright light
 
-* [ ] define orange color for buttons and message and heading... once
+* define orange color for buttons and message and heading... once
 
-* [ ] improve end game screen
-  * copy button is ugly
-
-* (optional) glitch effects
+* glitch effects
 
 ### Sound effects
 
@@ -72,18 +100,16 @@ It was definitely a great experience
 
 ### UI
 
-* (optional) pause game
+* pause game
 
-* [ ] find better font
+* find better font
   * e.g. 5 height
   * monospace
 
 ## Tasks for Paul `:-)`
 
-* [ ] mobile support?
 * [ ] place approaching tiles automatically
 * [ ] improve tilemap system
-* [ ] help fixing font issues
 
 ## Testing
 
@@ -102,23 +128,6 @@ It was definitely a great experience
   * 1:30
   * 1:22, 1:18
 
-* with push already approaching tiles
-  * 1:11
-  * 1:02
-  * 1:04
-  * 1:03
-
-## To discuss
-
-* [ ] name for game
-* [ ] readme
-* [ ] difficulties
-* [ ] make game available on GitHub?
-  * protect master branch
-* [ ] itch
-  * [ ] tags
-  * [ ] accessibility `one button`?
-
 ## Issues
 
 * [ ] sometimes neighbors of tiles are not found
@@ -128,52 +137,14 @@ It was definitely a great experience
 
 * [ ] is clicking wildly to place orbs a good idea?
 
-## Game name
-
-* orb
-* luminous
-* luminary
-* lumen
-* lux
-* radiant
-
-* eclipse
-* excidium
-* darkness
-* gloom
-* ~~shade~~
-* ~~shadow~~
-* ~~nocturne~~
-
-* invasion
-
-* luminorb
-
-
-* Luminous Resilience
-* lumisilience
-* Resiluminous
-
 ## Itch
 
-* [ ] game page
-  * [ ] description
-    * [ ] add from readme
-    * [ ] rules
-    * [ ] goal
-  * [ ] `Feel free to post your result in the comments section.`
-* [ ] short description
-  * Short tower defense game where you place orbs to slow down darkness.
-* [ ] screenshots (very late)
-  * before start
-  * mid game
-  * late game
-  * end game screen
-* [ ] trailer
+* (optional) trailer
   * just record game
 * [ ] gifs of game
   * show how placing orbs looks like
   * show how darkness spreads
+  * show pulsating core
 * [ ] mention repository
 
 ## Later
@@ -181,20 +152,3 @@ It was definitely a great experience
 * [ ] delete unused files
   * assets
   * scripts
-
-## Implementation
-
-### Tilemap
-
-* [ ] place darkness tiles by hand
-  * for each difficulty map
-* [ ] place approaching tiles automatically
-
-## Difficulty
-
-* [x] more initial black tiles
-* [x] different background color
-* [x] more cores
-* [ ] already placed orbs at bad positions
-  * close to center
-* [ ] random difficulty

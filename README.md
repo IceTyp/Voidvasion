@@ -1,25 +1,31 @@
-# Darkness TODO find better name
+# Voidvasion
 
-Thanks for downloading our game!
+## Description
+
+In this game, you place orbs to delay the void. Your core orb will eventually break. By strategically placing orbs, you can survive longer. After the game finishes, you receive a result depending on the time you stayed in the game. A game takes around 2 minutes. How long can you survive?
+
+You can play the game [here](https://arytherias.itch.io/voidvasion).
+
+This game was made in about 2 weeks for [Lowrezjam 2023](https://itch.io/jam/lowrezjam-2023).
 
 ## Controls
 
-Use your mouse to place orbs.
-Press "START" when you are finished.
-You can also place orbs during the game but you cannot have more than 15 orbs at a time.
+Use your mouse to place orbs. Press "START" when you are finished.
+You can also place orbs after pressing "START" but you cannot have more than 15 orbs at a time.
 
-The game is over when one of your cores (orange orbs) breaks. How long can you survive?
+The game is over when one of your core orbs (initial orbs) breaks.
 
 ## Tactical tips
 
-When orbs break, you can place new orbs. Try placing your orbs close to darkness so that they break sooner.
+Orbs slow down the void significantly. Place your orbs in a way such that the void cannot reach your core easily.
+When orbs break, you can place new orbs. Try placing your orbs close to the void so that they break sooner.
 
 ## Credits
 
 Game by [Arytherias](https://arytherias.itch.io/) and [greenp42](https://github.com/greenp42).
 
-This game is developed with [Godot game engine](https://godotengine.org/) version 4.1.1.
-(See also https://godotengine.org/license)
+This game is developed with [Godot game engine](https://godotengine.org/).
+(see also https://godotengine.org/license)
 
 The used font is Silkscreen from [The Silkscreen Project Authors](https://github.com/googlefonts/silkscreen).
 

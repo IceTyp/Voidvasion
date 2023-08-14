@@ -3,12 +3,12 @@ extends Control
 signal new_game_requested
 
 const messages := {
-	0: "Flicker of Hope!",
-	120: "Glowing Effort!",
-	140: "Guiding Light!",
-	160: "Radiant Stand!",
-	180: "Luminous Resilience!",
-	200: "Resolute Spirit!",
+	0: "Flicker of Hope",
+	120: "Glowing Effort",
+	140: "Guiding Light",
+	160: "Radiant Stand",
+	180: "Luminous\nResilience",
+	200: "Resolute Spirit",
 }
 
 var result := "No message...": set = update_result
