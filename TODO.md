@@ -1,65 +1,86 @@
 # TODO
 
-* [ ] add email
-  * [ ] in readme
-
-* [ ] add readme with credits to itch?
+* [ ] make it easier to distinguish core from other orbs
+  * this is difficult if background is colorful
+  * gray square that occludes light? What with canvas modulate?
 
 * [ ] make repository public
   * protect master branch
   * [ ] add license to repository
+  * later
+  * if project is successful enough, make devlog about this
 
 ## Blockers
 
-* [ ] devlog
+* [x] add readme with credits to itch?
+* [x] devlog
   * on lowrezjam community
+  * [ ] publish
 * [ ] release announcement
   * Itch
   * Telegram
-  * Godot Discord
+    * Es ist fertig. Man kann es auch direkt im Browser spielen.
+  * [ ] Godot Discord
+    * `Orb placing survival game I made with Godot 4 for a game jam`
   * Reddit
 
 ## Devlog
 
 This is our first game jam. We used Godot Game Engine (version 4.1.1) for this project.
-For our game, we decided to take the theme "Invasion". Our initial idea was to make a classical tower defense game. In the end, we made a game where one places orbs to delay a mysterious void.
+For our game, we decided to use the theme "Invasion". Our initial idea was to make a classical tower defense game. But because of the small resolution, we came up with something different. So we made a game where one places luminous orbs to delay a mysterious void.
 
 We had ideas for all different kinds of orbs. The issue was: How can we communicate this to the player?
-With the low resolution, making descriptions would 
+With the low resolution, we couldn't easily add descriptions. At least, we thought so. Therefore, we decided to have only one type of orb you can place. This makes the game much easier to come into. You just have to click to add an orb.
 
-We also implemented several difficulties for this game to give it some replay value.
-and even a random mode TODO
+In the end, the game turned out to be some high-score game with several difficulties. How long can you stay in the game?
 
-In the end, Lowrezjam was a great motivation to try something new and we learned a lot about Godot, lights and gradients.
-
+Lowrezjam was a great motivation to try out something new and we learned a lot in the process.
 
 
-###
 
-I'm proud to announce our game Voidvasion which we made for Lowrezjam 2023.
-The game jam restricted the game to have a resolution of 64x64 or lower.
-This had some significant impacts on the game process. We initially planned to make a classical tower defense game where you place different towers and prevent something from invading. However, at this resolution, the map in the game would either have to be very small or the towers would need to occupy only a few pixels resulting in difficulties when doing graphics for them.
-So we came up with a different idea: Placing luminous objects to slow down darkness. I tried to create candles for this resolution but this didn't work out well. So I took even simpler objects which are just white squares emitting light. These are now the orbs that you place in the game.
-Next, we needed variations of orbs. We had many ideas. Orbs of different size, orbs that are stronger, and so on. We also planned to add an orb to the cursor of the mouse so that the player can delay darkness just by moving the cursor. But how could we communicate all those features to the player? With the small resolution, it is not trivial to add ingame descriptions. For our game, we chose a pixel font with a height of 5. With some patting around the text, this meant that the timer alone would occupy the top 7 rows of pixels on our screen.
-Adding descriptions would mean that we could only use a fraction of the map. Thus, adding ingame descriptions wasn't really an option. Therefore, we discarded those ideas. Of course, this meant that we had less strategic depth for our game in favor of a simpler game you get much easier into. This was the right decision and works well with how short the game length is.
+### 
 
-This game jam was definitely a great motivation to try something new and we learned a lot about Godot, light, gradient in the process.
+Hi,
+I decided to participate in LOWREZJAM TODO link with some help of a friend to try out something entirely different this time.
+
+The game jam restricted us to work with a resolution of 64x64 or lower. This had some significant impacts on the game process. Our initial idea was to make a classical tower defense game. But because of the small resolution, we came up with something different. In the end, we made a game where one places luminous orbs to delay a mysterious void.
+
+### Gameplay
+
+We had ideas for all different kinds of orbs. The issue was: How can we communicate this to the player?
+With the low resolution, we couldn't easily add descriptions. Also, we would need some resource system to "buy" orbs, and balancing the game would be more difficult.
+In the end, we decided to have only one type of orb you can place. Further, you can have only 15 orbs at the same time. This makes the game much easier to come into. You just have to click to add an orb.
+The game turned out to be a high-score game where you try to survive as long as possible. It is already quite a challenge to resist the void for more than 3 minutes. You can also try to place as many orbs as possible.
+
+For further variety, we added several difficulties. Here, we just varied initial positions for core orbs and darkness. There are even difficulties where you have more than 1 core to protect.
+The design space for this game turned out to be much larger than I thought. While writing this, I got an idea that I needed to try out and add to the game...
+
+### Visuals
+
+Although I have experience with pixel art (see my other project TODO), I decided to not do any for this project. Instead, I used light effects and gradients directly in Godot and I'm quite satisfied with the result.
+I am especially proud with how the orbs turned out. This might now be a bit technical. For orbs, I just used a white square and added a point light. By increasing and decreasing the energy of the light, I could give the orb this pulsating effect. But this was not exciting enough for me. So I tried something out. I added a constant rotation to the orbs. If this game had a high resolution, there wouldn't be any difference. But with how snapping to pixels in Godot works, the orbs received this cool "mechanical" animation I got basically for free. It is so satisfying to look at the orbs now.
+
+### Sound
+
+Another design part was the sound of the game. To enhance the feeling of the approaching void, I added a constant background noise that intensifies over time. I gave the orbs some pulsating sound effect and added a sound for placing orbs. But the most important sound effect is this glass breaking effect that can be heard when an orb breaks. This gives the game such a stressful moment and works very well with the theme. Especially, when several orbs break in a short time frame. I really like how all the sound effects work together and I love the tension you get in this game. Check out the credits section in the readme file TODO to see where I got those sound effect from.
+
+### Conclusion
+
+I'm very proud of how the game turned out and I loved working on it.
+
+LOWREZJAM was definitely a great motivation to try something new and we learned a lot about Godot, especially lights, gradients and tilemaps. I'm looking forward to my next game jam.
 
 
-If you played my other game, you will see that this game is completely different.
-
-I also decided to make this game Open Source. You can find the source code here LINK.
-
-I'm looking forward to hearing your feedback.
 
 
-It was definitely a great experience
 
 ## Release announcement
 
 TODO
 
 ## Optional
+
+* [ ] score board
 
 * improve ui theme
   * issues with spacing above and below

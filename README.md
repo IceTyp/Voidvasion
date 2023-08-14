@@ -6,9 +6,9 @@ In this game, you place orbs to delay the void. Your core orb will eventually br
 
 You can play the game [here](https://arytherias.itch.io/voidvasion).
 
-This game was made in about 2 weeks for [Lowrezjam 2023](https://itch.io/jam/lowrezjam-2023).
+This game was made in about 2 weeks for [LOWREZJAM 2023](https://itch.io/jam/lowrezjam-2023).
 
-## Controls
+## Game rules and controls
 
 Use your mouse to place orbs. Press "START" when you are finished.
 You can also place orbs after pressing "START" but you cannot have more than 15 orbs at a time.
@@ -17,8 +17,10 @@ The game is over when one of your core orbs (initial orbs) breaks.
 
 ## Tactical tips
 
-Orbs slow down the void significantly. Place your orbs in a way such that the void cannot reach your core easily.
-When orbs break, you can place new orbs. Try placing your orbs close to the void so that they break sooner.
+* Orbs slow down the void significantly. Place your orbs in a way such that the void cannot reach your core easily.
+* When orbs break, you can place new orbs. Try placing your orbs close to the void so that they break sooner.
+* Try to predict which orb will break next so you can already think of a spot for your next orb.
+* If many orbs break at the same time, you will have a very stressful time to place new orbs.
 
 ## Credits
 
