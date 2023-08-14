@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyo1xmcmh47lf"]
+
+[ext_resource type="PackedScene" uid="uid://dhwpbwves76gi" path="res://src/maps/difficulties/default.tscn" id="1_87b3r"]
+[ext_resource type="PackedScene" uid="uid://olw5saaxm5rm" path="res://src/orbs/core.tscn" id="2_hxb13"]
+[ext_resource type="Texture2D" uid="uid://7nf7hfegdmn5" path="res://assets/background/distant_cores.tres" id="2_uegrx"]
+
+[node name="DistantCores" instance=ExtResource("1_87b3r")]
+
+[node name="Background" parent="." index="0"]
+texture = ExtResource("2_uegrx")
+
+[node name="Core" parent="Orbs" index="0"]
+position = Vector2(6, 35)
+
+[node name="Core2" parent="Orbs" index="1" instance=ExtResource("2_hxb13")]
+position = Vector2(53, 14)
+
+[node name="Core3" parent="Orbs" index="2" instance=ExtResource("2_hxb13")]
+position = Vector2(46, 50)
+
+[node name="TileMap" parent="." index="3"]
+layer_0/tile_data = PackedInt32Array(2228258, 0, 65536, 2228259, 0, 65536, 1638435, 0, 65536, 1638434, 0, 65536, 1966119, 0, 65536, 1900583, 0, 65536, 1900574, 0, 65536, 1966110, 0, 65536, 1703967, 0, 65536, 1703974, 0, 65536, 2162726, 0, 65536, 2162719, 0, 65536, 2031649, 0, 65536, 2031652, 0, 65536, 1835044, 0, 65536, 1835041, 0, 65536)

@@ -13,6 +13,7 @@ var difficulties := {
 	"hard": preload("res://src/maps/difficulties/1.tscn"),
 	"nightmare": preload("res://src/maps/difficulties/double_core.tscn"),
 	"chaos": preload("res://src/maps/difficulties/points.tscn"),
+	"eclipse": preload("res://src/maps/difficulties/distant_cores.tscn"),
 }
 var orb_counter := 0
 var orbs_placed := 0
