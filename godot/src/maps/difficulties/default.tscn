@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dhwpbwves76gi"]
 
 [ext_resource type="Script" path="res://src/maps/map.gd" id="1_0h21x"]
-[ext_resource type="PackedScene" uid="uid://cu10jyb0dvxau" path="res://src/maps/cursor.tscn" id="2_h0ghx"]
+[ext_resource type="PackedScene" uid="uid://cu10jyb0dvxau" path="res://src/maps/cursor_light.tscn" id="2_h0ghx"]
 [ext_resource type="Texture2D" uid="uid://clgflfdk1awca" path="res://assets/background/gray.tres" id="2_tpnd3"]
 [ext_resource type="Script" path="res://src/maps/orb_placing.gd" id="3_88ljh"]
 [ext_resource type="PackedScene" uid="uid://olw5saaxm5rm" path="res://src/orbs/core.tscn" id="4_gr6yd"]
@@ -26,7 +26,7 @@ script = ExtResource("1_0h21x")
 position = Vector2(32, 32)
 texture = ExtResource("2_tpnd3")
 
-[node name="Cursor" parent="." instance=ExtResource("2_h0ghx")]
+[node name="CursorLight" parent="." instance=ExtResource("2_h0ghx")]
 
 [node name="Orbs" type="Node2D" parent="."]
 script = ExtResource("3_88ljh")
@@ -54,4 +54,4 @@ stream = ExtResource("8_eveyf")
 volume_db = -10.0
 bus = &"Background"
 
-[connection signal="place_orb" from="Cursor" to="Orbs" method="_on_cursor_place_orb"]
+[connection signal="place_orb" from="CursorLight" to="Orbs" method="_on_cursor_light_place_orb"]
