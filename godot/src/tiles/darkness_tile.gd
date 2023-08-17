@@ -8,7 +8,7 @@ enum States {WAITING, APPROACHING, ARRIVED}
 var state := States.WAITING
 var darkness_level := 0.0
 
-@onready var orbit_detector: Area2D = $OrbitDetector
+@onready var aura_detector: Area2D = $AuraDetector
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var light_occluder_2d: LightOccluder2D = $LightOccluder2D
 @onready var neighbor_detector: Area2D = $NeighborDetector
@@ -37,7 +37,7 @@ func start_approach() -> void:
 
 
 func approach() -> void:
-	darkness_level += (randf_range(0.1, 1) ** 2) / (1 + len(orbit_detector.get_overlapping_areas()))
+	darkness_level += (randf_range(0.1, 1) ** 2) / (1 + len(aura_detector.get_overlapping_areas()))
 	darkness_level = clamp(darkness_level, 0, 1)
 	modulate = Color(1, 1, 1, darkness_level)
 

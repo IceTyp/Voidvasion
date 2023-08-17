@@ -7,8 +7,8 @@
 modulate = Color(0, 0, 0, 1)
 script = ExtResource("1_siyfp")
 
-[node name="OrbitDetector" parent="." index="2"]
+[node name="AuraDetector" parent="." index="2"]
 visible = false
 
-[node name="CollisionShape2D" parent="OrbitDetector" index="0"]
+[node name="CollisionShape2D" parent="AuraDetector" index="0"]
 visible = true

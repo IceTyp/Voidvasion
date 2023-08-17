@@ -35,7 +35,7 @@ movie_writer/movie_file="/home/marcus/Documents/Spiele/Godot_projects/Lowrezjam2
 
 2d_physics/layer_1="darkness"
 2d_physics/layer_2="orbs"
-2d_physics/layer_3="orbits"
+2d_physics/layer_3="auras"
 2d_physics/layer_4="darkness_neighbor_detector"
 
 [rendering]
