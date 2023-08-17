@@ -1,5 +1,7 @@
 # Voidvasion
 
+![](godot/icon.png)
+
 ## Description
 
 In this game, you place orbs to delay the void. Your core orb will eventually break. By strategically placing orbs, you can survive longer. After the game finishes, you receive a result depending on the time you stayed in the game. A game takes around 2 minutes. How long can you survive?
