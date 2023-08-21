@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 	rotate(-delta / 8)
 	position = get_global_mouse_position().round()
 	visible = Global.orb_counter < Global.max_orb_number
-	point_light_2d.visible = is_valid_orb_position()
+	point_light_2d.energy = 3 if is_valid_orb_position() else 1
 
 
 func _unhandled_input(event: InputEvent) -> void:
