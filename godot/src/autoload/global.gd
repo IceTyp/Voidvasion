@@ -20,26 +20,46 @@ var orbs_placed := 0
 var seconds := 0
 var chosen_difficulty: String
 
+@onready var black_rect: ColorRect = %BlackRect
+
 
 func _ready() -> void:
+	black_rect.modulate = Color(1, 1, 1, 0)
+	black_rect.hide()
 	get_tree().paused = true
 
 
 func load_map(id: String) -> void:
+	Engine.time_scale = 1
+	var new_map: Node2D = difficulties[id].instantiate()
+	await fade_darkness_in().finished
 	orb_counter = 0
 	orbs_placed = 0
 	chosen_difficulty = id
-	if is_instance_valid(current_map):
-		current_map.queue_free()
-	current_map = difficulties[id].instantiate()
+	fade_darkness_out()
+	current_map = new_map
 	get_tree().get_root().add_child(current_map)
 	get_tree().paused = false
 
 
 func open_main_menu() -> void:
+	Engine.time_scale = 1
+	await fade_darkness_in().finished
 	main_menu.show()
+	fade_darkness_out()
+
+
+func fade_darkness_in() -> Tweener:
+	black_rect.show()
+	get_viewport().gui_release_focus()
+	return create_tween().tween_property(black_rect, "modulate", Color(1, 1, 1, 1), 0.5)
+
+
+func fade_darkness_out() -> void:
 	if is_instance_valid(current_map):
 		current_map.queue_free()
+	await create_tween().tween_property(black_rect, "modulate", Color(1, 1, 1, 0), 0.5).finished
+	black_rect.hide()
 
 
 func _on_orb_placed() -> void:
@@ -53,7 +73,9 @@ func _on_orb_broken() -> void:
 	orb_count_changed.emit()
 
 
-func _on_core_broken() -> void:
+func _on_core_broken(core: Orb) -> void:
+	Engine.time_scale = 1
+	await core.tree_exited
 	await get_tree().create_timer(.5).timeout
 	get_tree().paused = true
 	game_ended.emit()

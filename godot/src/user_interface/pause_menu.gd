@@ -12,13 +12,5 @@ func _on_button_resume_pressed() -> void:
 	hide()
 
 
-func _on_button_restart_pressed() -> void:
-	pass # TODO
-
-
-func _on_button_main_menu_pressed() -> void:
-	Global.open_main_menu()
-
-
 func _on_visibility_changed() -> void:
 	get_tree().paused = visible

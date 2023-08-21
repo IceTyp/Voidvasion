@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://gu2328w2x2tp"]
+[gd_scene load_steps=12 format=3 uid="uid://gu2328w2x2tp"]
 
 [ext_resource type="Theme" uid="uid://b80yagb12wjpq" path="res://assets/theme/ui_theme.tres" id="1_uuba0"]
 [ext_resource type="PackedScene" uid="uid://eqkgew17fiwo" path="res://src/user_interface/time.tscn" id="1_x67jg"]
 [ext_resource type="Script" path="res://src/user_interface/game_menu.gd" id="2_gk88m"]
 [ext_resource type="Texture2D" uid="uid://numojn7wtwt2" path="res://assets/icons/pause_menu.png" id="2_k1sr7"]
-[ext_resource type="Script" path="res://src/user_interface/button_pause_menu.gd" id="3_la4r1"]
 [ext_resource type="Script" path="res://src/user_interface/button_start.gd" id="3_wd2ni"]
 [ext_resource type="Script" path="res://src/user_interface/orb_counter.gd" id="4_8215v"]
 [ext_resource type="PackedScene" uid="uid://yjaa4snhm8sg" path="res://src/user_interface/game_end_screen.tscn" id="4_c6wfr"]
@@ -39,6 +38,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
 texture = SubResource("GradientTexture2D_djdlo")
@@ -51,7 +51,6 @@ offset_right = 7.0
 offset_bottom = 7.0
 icon = ExtResource("2_k1sr7")
 icon_alignment = 1
-script = ExtResource("3_la4r1")
 
 [node name="ButtonFastForward" parent="VBoxContainer/TextureRect" instance=ExtResource("4_s8fte")]
 unique_name_in_owner = true
@@ -61,7 +60,6 @@ offset_right = 16.0
 toggle_mode = false
 
 [node name="ButtonStart" type="Button" parent="VBoxContainer/TextureRect"]
-unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

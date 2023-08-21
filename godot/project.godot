@@ -17,7 +17,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://src/autoload/global.gd"
+Global="*res://src/autoload/global.tscn"
 ButtonUpdater="*res://src/autoload/button_updater.gd"
 
 [display]

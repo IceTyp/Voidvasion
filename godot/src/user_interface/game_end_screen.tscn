@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://yjaa4snhm8sg"]
+[gd_scene load_steps=7 format=3 uid="uid://yjaa4snhm8sg"]
 
 [ext_resource type="Theme" uid="uid://b80yagb12wjpq" path="res://assets/theme/ui_theme.tres" id="1_mj8xx"]
 [ext_resource type="Script" path="res://src/user_interface/game_end_screen.gd" id="2_le4qu"]
 [ext_resource type="RichTextEffect" uid="uid://clswmu8npdpvv" path="res://assets/theme/rich_text_effect_ghost.tres" id="3_4hxbn"]
+[ext_resource type="PackedScene" uid="uid://di4rbj6rxq1ri" path="res://src/user_interface/button_restart.tscn" id="4_1wgn1"]
 [ext_resource type="PackedScene" uid="uid://d366ijltpt61g" path="res://src/user_interface/button_quit.tscn" id="4_gjsl7"]
+[ext_resource type="PackedScene" uid="uid://vitae6vff7qm" path="res://src/user_interface/button_main_menu.tscn" id="5_6e8b2"]
 
 [node name="GameEndScreen" type="Control"]
 process_mode = 3
@@ -51,33 +53,17 @@ size_flags_vertical = 3
 alignment = 1
 
 [node name="ButtonCopy" type="Button" parent="VBoxContainer2/VBoxContainer"]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
 text = "Copy"
 
-[node name="ButtonRestart" type="Button" parent="VBoxContainer2/VBoxContainer"]
-unique_name_in_owner = true
+[node name="ButtonRestart" parent="VBoxContainer2/VBoxContainer" instance=ExtResource("4_1wgn1")]
 layout_mode = 2
-text = "Restart"
 
-[node name="ButtonMainMenu" type="Button" parent="VBoxContainer2/VBoxContainer"]
+[node name="ButtonMainMenu" parent="VBoxContainer2/VBoxContainer" instance=ExtResource("5_6e8b2")]
 layout_mode = 2
-text = "Main Menu"
 
 [node name="ButtonQuit" parent="VBoxContainer2" instance=ExtResource("4_gjsl7")]
 layout_mode = 2
 
-[node name="MouseBlocker" type="ColorRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 1, 1, 0)
-
 [connection signal="pressed" from="VBoxContainer2/VBoxContainer/ButtonCopy" to="." method="_on_button_copy_pressed"]
-[connection signal="pressed" from="VBoxContainer2/VBoxContainer/ButtonRestart" to="." method="_on_button_restart_pressed"]
-[connection signal="pressed" from="VBoxContainer2/VBoxContainer/ButtonMainMenu" to="." method="_on_button_main_menu_pressed"]

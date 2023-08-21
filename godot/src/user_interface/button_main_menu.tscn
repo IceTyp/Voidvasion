@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://vitae6vff7qm"]
+
+[ext_resource type="Script" path="res://src/user_interface/button_main_menu.gd" id="1_18olr"]
+
+[node name="ButtonMainMenu" type="Button"]
+text = "Main Menu"
+script = ExtResource("1_18olr")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

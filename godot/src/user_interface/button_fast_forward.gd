@@ -1,14 +1,18 @@
-extends ButtonIngame
+extends Button
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var fast_forward := false: set = set_fast_forward
 
 
+func _ready() -> void:
+	pressed.connect(set_fast_forward.bind(not fast_forward))
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		if visible:
-			_on_pressed()
+			set_fast_forward(not fast_forward)
 
 
 func set_fast_forward(val: bool) -> void:
@@ -19,12 +23,3 @@ func set_fast_forward(val: bool) -> void:
 	else:
 		animation_player.stop()
 		modulate = Color(1, 1, 1, 1)
-
-
-func _on_game_ended() -> void:
-	fast_forward = false
-	super._on_game_ended()
-
-
-func _on_pressed() -> void:
-	fast_forward = not fast_forward
