@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://gu2328w2x2tp"]
+[gd_scene load_steps=9 format=3 uid="uid://gu2328w2x2tp"]
 
 [ext_resource type="Theme" uid="uid://b80yagb12wjpq" path="res://assets/theme/ui_theme.tres" id="1_uuba0"]
 [ext_resource type="PackedScene" uid="uid://eqkgew17fiwo" path="res://src/user_interface/time.tscn" id="1_x67jg"]
 [ext_resource type="Script" path="res://src/user_interface/button_start.gd" id="3_wd2ni"]
 [ext_resource type="Script" path="res://src/user_interface/orb_counter.gd" id="4_8215v"]
 [ext_resource type="PackedScene" uid="uid://yjaa4snhm8sg" path="res://src/user_interface/game_end_screen.tscn" id="4_c6wfr"]
+[ext_resource type="PackedScene" uid="uid://d1u5ivc27uvw1" path="res://src/user_interface/button_fast_forward.tscn" id="4_s8fte"]
 
 [sub_resource type="Gradient" id="Gradient_clksn"]
 offsets = PackedFloat32Array(0)
@@ -63,6 +64,12 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Start"
 script = ExtResource("3_wd2ni")
+
+[node name="ButtonFastForward" parent="VBoxContainer/TextureRect" instance=ExtResource("4_s8fte")]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+toggle_mode = false
 
 [node name="OrbCounter" type="Label" parent="VBoxContainer/TextureRect"]
 modulate = Color(0.392157, 0.392157, 0.392157, 1)
