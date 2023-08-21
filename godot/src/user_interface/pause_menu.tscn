@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfbldgdx7y26x"]
+
+[ext_resource type="Theme" uid="uid://b80yagb12wjpq" path="res://assets/theme/ui_theme.tres" id="1_1fc0c"]
+[ext_resource type="Script" path="res://src/user_interface/pause_menu.gd" id="2_k7grp"]
+[ext_resource type="PackedScene" uid="uid://d366ijltpt61g" path="res://src/user_interface/button_quit.tscn" id="3_b8pay"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme = ExtResource("1_1fc0c")
+script = ExtResource("2_k7grp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.588235)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="ButtonResume" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="ButtonRestart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="ButtonMainMenu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="ButtonQuit" parent="VBoxContainer" instance=ExtResource("3_b8pay")]
+layout_mode = 2
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="VBoxContainer/ButtonResume" to="." method="_on_button_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonRestart" to="." method="_on_button_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonMainMenu" to="." method="_on_button_main_menu_pressed"]

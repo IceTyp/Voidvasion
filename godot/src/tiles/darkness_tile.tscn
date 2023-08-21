@@ -54,3 +54,5 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NeighborDetector"]
 visible = false
 shape = SubResource("RectangleShape2D_eydju")
+
+[node name="Timer" type="Timer" parent="."]

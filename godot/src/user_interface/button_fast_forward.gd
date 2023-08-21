@@ -1,15 +1,8 @@
-extends Button
+extends ButtonIngame
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var fast_forward := false: set = set_fast_forward
-
-
-func _ready() -> void:
-	hide()
-	Global.game_started.connect(_on_game_started)
-	Global.game_ended.connect(_on_game_ended)
-	text = "" # TODO workaround to not get "--"
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -28,13 +21,9 @@ func set_fast_forward(val: bool) -> void:
 		modulate = Color(1, 1, 1, 1)
 
 
-func _on_game_started() -> void:
-	show()
-
-
 func _on_game_ended() -> void:
 	fast_forward = false
-	hide()
+	super._on_game_ended()
 
 
 func _on_pressed() -> void:

@@ -12,6 +12,7 @@ var darkness_level := 0.0
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var light_occluder_2d: LightOccluder2D = $LightOccluder2D
 @onready var neighbor_detector: Area2D = $NeighborDetector
+@onready var timer: Timer = $Timer
 
 
 func _ready() -> void:
@@ -31,7 +32,8 @@ func start_approach() -> void:
 	if state == States.WAITING:
 		state = States.APPROACHING
 		while darkness_level < 1:
-			await get_tree().create_timer(randf_range(.5, 2)).timeout
+			timer.start(randf_range(.5, 2))
+			await timer.timeout
 			approach()
 		emit_signal("arrived")
 

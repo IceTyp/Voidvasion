@@ -18,7 +18,8 @@ func update_buttons(node: Node) -> void:
 	if node is Button:
 		node.pressed.connect(sounds.accept.play)
 		node.mouse_entered.connect(sounds.focus.play)
-		node.text = "-%s-" % node.text
+		if node.text:
+			node.text = "-%s-" % node.text
 		node.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 	for child in node.get_children():
 		update_buttons(child)

@@ -29,12 +29,14 @@ func load_map(id: String) -> void:
 	orb_counter = 0
 	orbs_placed = 0
 	chosen_difficulty = id
+	if is_instance_valid(current_map):
+		current_map.queue_free()
 	current_map = difficulties[id].instantiate()
 	get_tree().get_root().add_child(current_map)
 	get_tree().paused = false
 
 
-func show_main_menu() -> void:
+func open_main_menu() -> void:
 	main_menu.show()
 	if is_instance_valid(current_map):
 		current_map.queue_free()
@@ -57,8 +59,12 @@ func _on_core_broken() -> void:
 	game_ended.emit()
 
 
-func _on_new_game_requested() -> void:
-	show_main_menu()
+func _on_restart_map() -> void:
+	load_map(chosen_difficulty)
+
+
+func _on_main_menu_requested() -> void:
+	open_main_menu()
 
 
 func _on_button_start_pressed() -> void:

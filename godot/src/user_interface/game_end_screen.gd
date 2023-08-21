@@ -1,6 +1,7 @@
 extends Control
 
-signal new_game_requested
+signal main_menu_requested
+signal restart_map
 
 const messages := {
 	0: "Flicker of Hope",
@@ -22,7 +23,7 @@ func _ready() -> void:
 	hide()
 	mouse_blocker.hide()
 	Global.game_ended.connect(_on_game_ended)
-	new_game_requested.connect(Global._on_new_game_requested)
+	main_menu_requested.connect(Global._on_main_menu_requested)
 
 
 func update_result(val: String) -> void:
@@ -61,11 +62,15 @@ func _on_button_copy_pressed() -> void:
 	)
 
 
-func _on_button_new_game_pressed() -> void:
+func _on_button_restart_pressed() -> void:
+	restart_map.emit()
+
+
+func _on_button_main_menu_pressed() -> void:
 	mouse_blocker.show()
 	get_viewport().gui_release_focus()
 	await create_tween().tween_property(self, "modulate", Color(0, 0, 0, 1), 0.5).finished
-	new_game_requested.emit()
+	main_menu_requested.emit()
 
 
 func _on_button_quit_pressed() -> void:
