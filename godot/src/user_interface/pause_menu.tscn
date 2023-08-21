@@ -2,9 +2,9 @@
 
 [ext_resource type="Theme" uid="uid://b80yagb12wjpq" path="res://assets/theme/ui_theme.tres" id="1_1fc0c"]
 [ext_resource type="Script" path="res://src/user_interface/pause_menu.gd" id="2_k7grp"]
-[ext_resource type="PackedScene" uid="uid://di4rbj6rxq1ri" path="res://src/user_interface/buttons/button_restart.tscn" id="3_5wl8p"]
-[ext_resource type="PackedScene" uid="uid://d366ijltpt61g" path="res://src/user_interface/buttons/button_quit.tscn" id="3_b8pay"]
-[ext_resource type="PackedScene" uid="uid://vitae6vff7qm" path="res://src/user_interface/buttons/button_main_menu.tscn" id="4_8wynu"]
+[ext_resource type="PackedScene" uid="uid://di4rbj6rxq1ri" path="res://src/user_interface/buttons/button_restart.tscn" id="3_bffgc"]
+[ext_resource type="PackedScene" uid="uid://vitae6vff7qm" path="res://src/user_interface/buttons/button_main_menu.tscn" id="4_nx637"]
+[ext_resource type="PackedScene" uid="uid://d366ijltpt61g" path="res://src/user_interface/buttons/button_quit.tscn" id="5_cytfq"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2
@@ -27,27 +27,31 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.588235)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
 alignment = 1
 
-[node name="ButtonResume" type="Button" parent="VBoxContainer"]
+[node name="ButtonResume" type="Button" parent="VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 text = "Resume"
 
-[node name="ButtonRestart" parent="VBoxContainer" instance=ExtResource("3_5wl8p")]
+[node name="ButtonRestart" parent="VBoxContainer2/VBoxContainer" instance=ExtResource("3_bffgc")]
 layout_mode = 2
 
-[node name="ButtonMainMenu" parent="VBoxContainer" instance=ExtResource("4_8wynu")]
+[node name="ButtonMainMenu" parent="VBoxContainer2/VBoxContainer" instance=ExtResource("4_nx637")]
 layout_mode = 2
 
-[node name="ButtonQuit" parent="VBoxContainer" instance=ExtResource("3_b8pay")]
+[node name="ButtonQuit" parent="VBoxContainer2" instance=ExtResource("5_cytfq")]
 layout_mode = 2
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
-[connection signal="pressed" from="VBoxContainer/ButtonResume" to="." method="_on_button_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer2/VBoxContainer/ButtonResume" to="." method="_on_button_resume_pressed"]

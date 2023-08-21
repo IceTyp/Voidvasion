@@ -87,6 +87,7 @@ offset_bottom = 23.0
 text = "31:25"
 
 [node name="OrbCounter" type="Label" parent="VBoxContainer/TextureRect"]
+unique_name_in_owner = true
 modulate = Color(0.392157, 0.392157, 0.392157, 1)
 layout_mode = 1
 anchors_preset = 1

@@ -6,8 +6,6 @@ extends Node2D
 
 func _ready() -> void:
 	Global.game_started.connect(start_darkening)
-	modulate = Color(0, 0, 0, 1)
-	create_tween().tween_property(self, "modulate", Color(1, 1, 1, 1), 0.5)
 
 
 func start_darkening() -> void:

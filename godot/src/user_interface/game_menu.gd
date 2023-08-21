@@ -1,9 +1,10 @@
 extends Control
 
+@onready var texture_rect: TextureRect = %TextureRect
 @onready var button_pause_menu: Button = %ButtonPauseMenu
 @onready var button_fast_forward: Button = %ButtonFastForward
+@onready var orb_counter: Label = %OrbCounter
 @onready var pause_menu: Control = %PauseMenu
-@onready var texture_rect: TextureRect = %TextureRect
 
 
 func _ready() -> void:
@@ -29,3 +30,4 @@ func _on_game_started() -> void:
 func _on_game_ended() -> void:
 	button_fast_forward.hide()
 	button_pause_menu.hide()
+	orb_counter.hide()
