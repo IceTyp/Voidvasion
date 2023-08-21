@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://di4rbj6rxq1ri"]
 
-[ext_resource type="Script" path="res://src/user_interface/button_restart.gd" id="1_4x81d"]
+[ext_resource type="Script" path="res://src/user_interface/buttons/button_restart.gd" id="1_4x81d"]
 
 [node name="ButtonRestart" type="Button"]
 text = "Restart"

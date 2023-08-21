@@ -2,9 +2,9 @@
 
 [ext_resource type="Theme" uid="uid://b80yagb12wjpq" path="res://assets/theme/ui_theme.tres" id="1_1fc0c"]
 [ext_resource type="Script" path="res://src/user_interface/pause_menu.gd" id="2_k7grp"]
-[ext_resource type="PackedScene" uid="uid://di4rbj6rxq1ri" path="res://src/user_interface/button_restart.tscn" id="3_5wl8p"]
-[ext_resource type="PackedScene" uid="uid://d366ijltpt61g" path="res://src/user_interface/button_quit.tscn" id="3_b8pay"]
-[ext_resource type="PackedScene" uid="uid://vitae6vff7qm" path="res://src/user_interface/button_main_menu.tscn" id="4_8wynu"]
+[ext_resource type="PackedScene" uid="uid://di4rbj6rxq1ri" path="res://src/user_interface/buttons/button_restart.tscn" id="3_5wl8p"]
+[ext_resource type="PackedScene" uid="uid://d366ijltpt61g" path="res://src/user_interface/buttons/button_quit.tscn" id="3_b8pay"]
+[ext_resource type="PackedScene" uid="uid://vitae6vff7qm" path="res://src/user_interface/buttons/button_main_menu.tscn" id="4_8wynu"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2

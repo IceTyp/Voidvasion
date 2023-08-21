@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://b80yagb12wjpq" path="res://assets/theme/ui_theme.tres" id="1_fa845"]
 [ext_resource type="Texture2D" uid="uid://1sve1nnk8njl" path="res://assets/icons/fast_forward.png" id="2_qa4qu"]
-[ext_resource type="Script" path="res://src/user_interface/button_fast_forward.gd" id="3_hn5st"]
+[ext_resource type="Script" path="res://src/user_interface/buttons/button_fast_forward.gd" id="3_hn5st"]
 
 [sub_resource type="Animation" id="Animation_6f8uh"]
 resource_name = "pressed"

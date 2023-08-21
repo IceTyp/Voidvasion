@@ -6,13 +6,13 @@ var fast_forward := false: set = set_fast_forward
 
 
 func _ready() -> void:
-	pressed.connect(set_fast_forward.bind(not fast_forward))
+	pressed.connect(_on_pressed)
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		if visible:
-			set_fast_forward(not fast_forward)
+			pressed.emit()
 
 
 func set_fast_forward(val: bool) -> void:
@@ -23,3 +23,7 @@ func set_fast_forward(val: bool) -> void:
 	else:
 		animation_player.stop()
 		modulate = Color(1, 1, 1, 1)
+
+
+func _on_pressed() -> void:
+	fast_forward = not fast_forward

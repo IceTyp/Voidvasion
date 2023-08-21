@@ -7,8 +7,8 @@ extends Control
 
 
 func _ready() -> void:
-#	button_fast_forward.hide()
-#	Global.game_started.connect(_on_game_started)
+	button_fast_forward.hide()
+	Global.game_started.connect(_on_game_started)
 	Global.game_ended.connect(_on_game_ended)
 
 	for node in texture_rect.get_children():
@@ -22,8 +22,8 @@ func _on_button_pause_menu_pressed() -> void:
 	pause_menu.show()
 
 
-#func _on_game_started() -> void:
-#	button_fast_forward.show()
+func _on_game_started() -> void:
+	button_fast_forward.show()
 
 
 func _on_game_ended() -> void:

@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://yjaa4snhm8sg"]
 
-[ext_resource type="Theme" uid="uid://b80yagb12wjpq" path="res://assets/theme/ui_theme.tres" id="1_mj8xx"]
-[ext_resource type="Script" path="res://src/user_interface/game_end_screen.gd" id="2_le4qu"]
-[ext_resource type="RichTextEffect" uid="uid://clswmu8npdpvv" path="res://assets/theme/rich_text_effect_ghost.tres" id="3_4hxbn"]
-[ext_resource type="PackedScene" uid="uid://di4rbj6rxq1ri" path="res://src/user_interface/button_restart.tscn" id="4_1wgn1"]
-[ext_resource type="PackedScene" uid="uid://d366ijltpt61g" path="res://src/user_interface/button_quit.tscn" id="4_gjsl7"]
-[ext_resource type="PackedScene" uid="uid://vitae6vff7qm" path="res://src/user_interface/button_main_menu.tscn" id="5_6e8b2"]
+[ext_resource type="Theme" uid="uid://b80yagb12wjpq" path="res://assets/theme/ui_theme.tres" id="1_loaes"]
+[ext_resource type="Script" path="res://src/user_interface/game_end_menu.gd" id="2_phxqu"]
+[ext_resource type="RichTextEffect" uid="uid://clswmu8npdpvv" path="res://assets/theme/rich_text_effect_ghost.tres" id="3_hxrhj"]
+[ext_resource type="PackedScene" uid="uid://di4rbj6rxq1ri" path="res://src/user_interface/buttons/button_restart.tscn" id="4_vyeg5"]
+[ext_resource type="PackedScene" uid="uid://vitae6vff7qm" path="res://src/user_interface/buttons/button_main_menu.tscn" id="5_yo1ql"]
+[ext_resource type="PackedScene" uid="uid://d366ijltpt61g" path="res://src/user_interface/buttons/button_quit.tscn" id="6_1qtx2"]
 
-[node name="GameEndScreen" type="Control"]
+[node name="GameEndMenu" type="Control"]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -16,8 +16,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-theme = ExtResource("1_mj8xx")
-script = ExtResource("2_le4qu")
+theme = ExtResource("1_loaes")
+script = ExtResource("2_phxqu")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -45,7 +45,7 @@ Orbs: 5"
 fit_content = true
 scroll_active = false
 autowrap_mode = 2
-custom_effects = [ExtResource("3_4hxbn")]
+custom_effects = [ExtResource("3_hxrhj")]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2"]
 layout_mode = 2
@@ -57,13 +57,13 @@ layout_mode = 2
 size_flags_vertical = 8
 text = "Copy"
 
-[node name="ButtonRestart" parent="VBoxContainer2/VBoxContainer" instance=ExtResource("4_1wgn1")]
+[node name="ButtonRestart" parent="VBoxContainer2/VBoxContainer" instance=ExtResource("4_vyeg5")]
 layout_mode = 2
 
-[node name="ButtonMainMenu" parent="VBoxContainer2/VBoxContainer" instance=ExtResource("5_6e8b2")]
+[node name="ButtonMainMenu" parent="VBoxContainer2/VBoxContainer" instance=ExtResource("5_yo1ql")]
 layout_mode = 2
 
-[node name="ButtonQuit" parent="VBoxContainer2" instance=ExtResource("4_gjsl7")]
+[node name="ButtonQuit" parent="VBoxContainer2" instance=ExtResource("6_1qtx2")]
 layout_mode = 2
 
 [connection signal="pressed" from="VBoxContainer2/VBoxContainer/ButtonCopy" to="." method="_on_button_copy_pressed"]

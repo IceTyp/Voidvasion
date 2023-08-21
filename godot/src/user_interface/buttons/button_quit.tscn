@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d366ijltpt61g"]
 
-[ext_resource type="Script" path="res://src/user_interface/button_quit.gd" id="1_ev867"]
+[ext_resource type="Script" path="res://src/user_interface/buttons/button_quit.gd" id="1_ev867"]
 
 [node name="ButtonQuit" type="Button"]
 anchors_preset = 7
