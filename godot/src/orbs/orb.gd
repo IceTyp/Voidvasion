@@ -14,7 +14,6 @@ var aura := preload("res://src/orbs/aura.tscn")
 @onready var darkness_detector: Area2D = $DarknessDetector
 @onready var auras: Node2D = $Auras
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 func _ready() -> void:

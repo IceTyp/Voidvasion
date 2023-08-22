@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cu10jyb0dvxau"]
+[gd_scene load_steps=8 format=3 uid="uid://cu10jyb0dvxau"]
 
 [ext_resource type="Script" path="res://src/maps/cursor_light.gd" id="1_yk3q8"]
 [ext_resource type="Texture2D" uid="uid://ct4o8ixctiaa7" path="res://assets/orbs/small.tres" id="2_xwkpy"]
@@ -17,9 +17,6 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.8, 0)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_frn2k"]
-radius = 4.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_y406q"]
 radius = 3.0
 
@@ -34,21 +31,13 @@ energy = 3.0
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_ih77w")
 
-[node name="Detectors" type="Node2D" parent="."]
+[node name="Node" type="Node" parent="."]
 
-[node name="OrbDetector" type="Area2D" parent="Detectors"]
-unique_name_in_owner = true
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Detectors/OrbDetector"]
-shape = SubResource("CircleShape2D_frn2k")
-
-[node name="DarknessDetector" type="Area2D" parent="Detectors"]
+[node name="DarknessDetector" type="Area2D" parent="Node"]
 unique_name_in_owner = true
 collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Detectors/DarknessDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/DarknessDetector"]
 shape = SubResource("CircleShape2D_y406q")
 
 [node name="AudioStreamPlayerPlaceOrb" type="AudioStreamPlayer2D" parent="."]
