@@ -34,17 +34,21 @@ energy = 3.0
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_ih77w")
 
-[node name="OrbDetector" type="Area2D" parent="."]
+[node name="Detectors" type="Node2D" parent="."]
+
+[node name="OrbDetector" type="Area2D" parent="Detectors"]
+unique_name_in_owner = true
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OrbDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detectors/OrbDetector"]
 shape = SubResource("CircleShape2D_frn2k")
 
-[node name="DarknessDetector" type="Area2D" parent="."]
+[node name="DarknessDetector" type="Area2D" parent="Detectors"]
+unique_name_in_owner = true
 collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DarknessDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detectors/DarknessDetector"]
 shape = SubResource("CircleShape2D_y406q")
 
 [node name="AudioStreamPlayerPlaceOrb" type="AudioStreamPlayer2D" parent="."]

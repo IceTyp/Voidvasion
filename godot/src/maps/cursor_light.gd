@@ -1,11 +1,14 @@
 extends Node2D
 
-signal place_orb(position)
+@export var orbs: Node2D
+
+var small_orb := preload("res://src/orbs/small_orb.tscn")
+var orb_just_placed := false
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var point_light_2d: PointLight2D = $PointLight2D
-@onready var orb_detector: Area2D = $OrbDetector
-@onready var darkness_detector: Area2D = $DarknessDetector
+@onready var orb_detector: Area2D = %OrbDetector
+@onready var darkness_detector: Area2D = %DarknessDetector
 @onready var audio_stream_player_place_orb: AudioStreamPlayer2D = $AudioStreamPlayerPlaceOrb
 @onready var audio_stream_player_failed: AudioStreamPlayer = $AudioStreamPlayerFailed
 
@@ -28,8 +31,19 @@ func _unhandled_input(event: InputEvent) -> void:
 				audio_stream_player_failed.play()
 			else:
 				audio_stream_player_place_orb.play()
-				place_orb.emit(event.position)
+				place_orb(position)
 				get_viewport().set_input_as_handled()
+
+
+func place_orb(_position: Vector2) -> void:
+	if orb_just_placed:
+		return
+	orb_just_placed = true
+	var orb := small_orb.instantiate()
+	orb.position = _position.round()
+	orbs.add_child(orb)
+	await get_tree().create_timer(0.1).timeout # TODO how long?
+	orb_just_placed = false
 
 
 func is_valid_orb_position() -> bool:
