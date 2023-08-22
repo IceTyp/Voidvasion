@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://clgflfdk1awca" path="res://assets/background/gray.tres" id="2_tpnd3"]
 [ext_resource type="PackedScene" uid="uid://olw5saaxm5rm" path="res://src/orbs/core.tscn" id="4_gr6yd"]
 [ext_resource type="PackedScene" uid="uid://ctelatmnjy16n" path="res://src/tiles/arrived_tile.tscn" id="5_kbcn3"]
-[ext_resource type="PackedScene" uid="uid://csbl7cdky8pmi" path="res://src/tiles/darkness_tile.tscn" id="6_my2kv"]
+[ext_resource type="PackedScene" uid="uid://csbl7cdky8pmi" path="res://src/tiles/void_tile.tscn" id="6_my2kv"]
 [ext_resource type="PackedScene" uid="uid://gu2328w2x2tp" path="res://src/user_interface/game_menu.tscn" id="7_x7jl6"]
-[ext_resource type="Script" path="res://src/maps/darkness_controller.gd" id="8_anhii"]
-[ext_resource type="AudioStream" uid="uid://phedwbqdln88" path="res://sound/background/darkness.ogg" id="8_eveyf"]
+[ext_resource type="Script" path="res://src/maps/void_controller.gd" id="8_anhii"]
+[ext_resource type="AudioStream" uid="uid://bj8m553hcwx6f" path="res://sound/background/void.ogg" id="8_eveyf"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_cyeso"]
 scenes/1/scene = ExtResource("5_kbcn3")
@@ -48,7 +48,7 @@ color = Color(0.784314, 0.784314, 0.784314, 1)
 
 [node name="GameMenu" parent="CanvasLayer" instance=ExtResource("7_x7jl6")]
 
-[node name="AudioStreamPlayerDarkness" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayerVoid" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_eveyf")
 volume_db = -10.0
 bus = &"Background"

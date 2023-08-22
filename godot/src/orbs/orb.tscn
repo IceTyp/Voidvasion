@@ -124,10 +124,10 @@ texture = SubResource("GradientTexture2D_tgoke")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1b4bg")
 
-[node name="DarknessDetector" type="Area2D" parent="."]
+[node name="VoidDetector" type="Area2D" parent="."]
 collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DarknessDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VoidDetector"]
 shape = SubResource("RectangleShape2D_ej1fr")
 
 [node name="Auras" type="Node2D" parent="."]

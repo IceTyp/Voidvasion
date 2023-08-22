@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://csbl7cdky8pmi"]
 
-[ext_resource type="Script" path="res://src/tiles/darkness_tile.gd" id="1_0y4dj"]
+[ext_resource type="Script" path="res://src/tiles/void_tile.gd" id="1_0y4dj"]
 
 [sub_resource type="Gradient" id="Gradient_wnqhe"]
 offsets = PackedFloat32Array(0)
@@ -23,7 +23,7 @@ polygon = PackedVector2Array(0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eydju"]
 size = Vector2(1, 1)
 
-[node name="DarknessTile" type="StaticBody2D"]
+[node name="VoidTile" type="StaticBody2D"]
 modulate = Color(1, 1, 1, 0.243137)
 collision_mask = 0
 script = ExtResource("1_0y4dj")

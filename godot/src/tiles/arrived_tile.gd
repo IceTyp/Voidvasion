@@ -1,4 +1,4 @@
-extends DarknessTile
+extends VoidTile
 
 
 func _ready() -> void:

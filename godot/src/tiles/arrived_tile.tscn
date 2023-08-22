@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ctelatmnjy16n"]
 
-[ext_resource type="PackedScene" uid="uid://csbl7cdky8pmi" path="res://src/tiles/darkness_tile.tscn" id="1_locww"]
+[ext_resource type="PackedScene" uid="uid://csbl7cdky8pmi" path="res://src/tiles/void_tile.tscn" id="1_locww"]
 [ext_resource type="Script" path="res://src/tiles/arrived_tile.gd" id="1_siyfp"]
 
 [node name="ArrivedTile" instance=ExtResource("1_locww")]

@@ -43,10 +43,10 @@ ui_cancel={
 
 [layer_names]
 
-2d_physics/layer_1="darkness"
+2d_physics/layer_1="void"
 2d_physics/layer_2="orbs"
 2d_physics/layer_3="auras"
-2d_physics/layer_4="darkness_neighbor_detector"
+2d_physics/layer_4="void_neighbor_detector"
 
 [rendering]
 

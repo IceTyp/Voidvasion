@@ -1,4 +1,4 @@
-class_name DarknessTile
+class_name VoidTile
 extends StaticBody2D
 
 signal arrived
@@ -6,7 +6,7 @@ signal arrived
 enum States {WAITING, APPROACHING, ARRIVED}
 
 var state := States.WAITING
-var darkness_level := 0.0
+var void_level := 0.0
 
 @onready var aura_detector: Area2D = $AuraDetector
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
@@ -31,7 +31,7 @@ func _ready() -> void:
 func start_approach() -> void:
 	if state == States.WAITING:
 		state = States.APPROACHING
-		while darkness_level < 1:
+		while void_level < 1:
 			timer.start(randf_range(.5, 2))
 			await timer.timeout
 			approach()
@@ -39,14 +39,14 @@ func start_approach() -> void:
 
 
 func approach() -> void:
-	darkness_level += (randf_range(0.1, 1) ** 2) / (1 + len(aura_detector.get_overlapping_areas()))
-	darkness_level = clamp(darkness_level, 0, 1)
-	modulate = Color(1, 1, 1, darkness_level)
+	void_level += (randf_range(0.1, 1) ** 2) / (1 + len(aura_detector.get_overlapping_areas()))
+	void_level = clamp(void_level, 0, 1)
+	modulate = Color(1, 1, 1, void_level)
 
 
 func _on_arrived() -> void:
 	state = States.ARRIVED
-	darkness_level = 1
+	void_level = 1
 	collision_shape_2d.disabled = false
 	light_occluder_2d.occluder_light_mask = 1
 	modulate = Color(0, 0, 0, 1)

@@ -11,13 +11,13 @@ var aura := preload("res://src/orbs/aura.tscn")
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var point_light_2d: PointLight2D = $PointLight2D
-@onready var darkness_detector: Area2D = $DarknessDetector
+@onready var void_detector: Area2D = $VoidDetector
 @onready var auras: Node2D = $Auras
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 func _ready() -> void:
-	darkness_detector.body_entered.connect(_on_darkness_entered)
+	void_detector.body_entered.connect(_on_void_entered)
 	orb_placed.connect(Global._on_orb_placed)
 	orb_broken.connect(Global._on_orb_broken)
 	set_auras()
@@ -50,8 +50,8 @@ func set_energy(val: int) -> void:
 	point_light_2d.texture.height = 8 * val
 
 
-func _on_darkness_entered(_body: Node2D) -> void:
-	darkness_detector.body_entered.disconnect(_on_darkness_entered)
+func _on_void_entered(_body: Node2D) -> void:
+	void_detector.body_entered.disconnect(_on_void_entered)
 	auras.queue_free()
 	animation_player.play("shatter")
 	await animation_player.animation_finished

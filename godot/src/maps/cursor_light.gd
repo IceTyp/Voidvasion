@@ -8,7 +8,7 @@ var placing_active := false
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var point_light_2d: PointLight2D = $PointLight2D
-@onready var darkness_detector: Area2D = %DarknessDetector
+@onready var void_detector: Area2D = %VoidDetector
 @onready var audio_stream_player_place_orb: AudioStreamPlayer2D = $AudioStreamPlayerPlaceOrb
 @onready var audio_stream_player_failed: AudioStreamPlayer = $AudioStreamPlayerFailed
 
@@ -59,6 +59,6 @@ func is_valid_orb_position(target: Vector2) -> bool:
 	for orb in orbs.get_children():
 		if target.distance_to(orb.position) < 6:
 			return false
-	darkness_detector.position = target
+	void_detector.position = target
 	await get_tree().physics_frame
-	return not darkness_detector.has_overlapping_bodies()
+	return not void_detector.has_overlapping_bodies()

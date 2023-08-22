@@ -33,11 +33,11 @@ texture = SubResource("GradientTexture2D_ih77w")
 
 [node name="Node" type="Node" parent="."]
 
-[node name="DarknessDetector" type="Area2D" parent="Node"]
+[node name="VoidDetector" type="Area2D" parent="Node"]
 unique_name_in_owner = true
 collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/DarknessDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/VoidDetector"]
 shape = SubResource("CircleShape2D_y406q")
 
 [node name="AudioStreamPlayerPlaceOrb" type="AudioStreamPlayer2D" parent="."]

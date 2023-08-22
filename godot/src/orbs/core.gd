@@ -6,9 +6,9 @@ func _ready() -> void:
 	super._ready()
 
 
-func _on_darkness_entered(_body: Node2D) -> void:
+func _on_void_entered(_body: Node2D) -> void:
 	orb_broken.emit()
-	darkness_detector.body_entered.disconnect(_on_darkness_entered)
+	void_detector.body_entered.disconnect(_on_void_entered)
 	auras.queue_free()
 	animation_player.play("super_nova")
 	await animation_player.animation_finished
