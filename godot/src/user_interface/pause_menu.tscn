@@ -53,5 +53,4 @@ layout_mode = 2
 [node name="ButtonQuit" parent="VBoxContainer2" instance=ExtResource("5_cytfq")]
 layout_mode = 2
 
-[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="VBoxContainer2/VBoxContainer/ButtonResume" to="." method="_on_button_resume_pressed"]

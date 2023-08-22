@@ -106,6 +106,7 @@ layout_mode = 2
 
 [node name="PauseMenu" parent="." instance=ExtResource("9_s3kl0")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="VBoxContainer/TextureRect/ButtonPauseMenu" to="." method="_on_button_pause_menu_pressed"]

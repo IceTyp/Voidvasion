@@ -19,6 +19,12 @@ func _ready() -> void:
 		create_tween().tween_property(node, "scale", Vector2(1, 1), 0.2)
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		pause_menu.show()
+		get_viewport().set_input_as_handled()
+
+
 func _on_button_pause_menu_pressed() -> void:
 	pause_menu.show()
 
