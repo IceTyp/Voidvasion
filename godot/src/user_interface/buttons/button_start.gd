@@ -6,5 +6,11 @@ func _ready() -> void:
 	show()
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action("ui_accept"):
+		get_viewport().set_input_as_handled()
+		pressed.emit()
+
+
 func _on_pressed() -> void:
-	hide()
+	queue_free()
