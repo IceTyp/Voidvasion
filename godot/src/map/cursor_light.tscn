@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://cu10jyb0dvxau"]
 
-[ext_resource type="Script" path="res://src/maps/cursor_light.gd" id="1_yk3q8"]
-[ext_resource type="Texture2D" uid="uid://ct4o8ixctiaa7" path="res://assets/orbs/small.tres" id="2_xwkpy"]
-[ext_resource type="AudioStream" uid="uid://dw8num1d2tjxn" path="res://sound/effects/orb_placement.ogg" id="3_88dq7"]
-[ext_resource type="AudioStream" uid="uid://54hdvf718y24" path="res://sound/effects/orb_placement_failed.ogg" id="4_sdf8p"]
+[ext_resource type="Script" path="res://src/map/cursor_light.gd" id="1_mfjh2"]
+[ext_resource type="Texture2D" uid="uid://ct4o8ixctiaa7" path="res://assets/orbs/small.tres" id="2_1mlpw"]
+[ext_resource type="AudioStream" uid="uid://dw8num1d2tjxn" path="res://sound/effects/orb_placement.ogg" id="3_p034j"]
+[ext_resource type="AudioStream" uid="uid://54hdvf718y24" path="res://sound/effects/orb_placement_failed.ogg" id="4_trdqh"]
 
 [sub_resource type="Gradient" id="Gradient_hy5uw"]
 offsets = PackedFloat32Array(0, 0.6)
@@ -21,10 +21,10 @@ fill_to = Vector2(0.8, 0)
 radius = 3.0
 
 [node name="CursorLight" type="Node2D"]
-script = ExtResource("1_yk3q8")
+script = ExtResource("1_mfjh2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_xwkpy")
+texture = ExtResource("2_1mlpw")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 3.0
@@ -41,7 +41,7 @@ collision_layer = 0
 shape = SubResource("CircleShape2D_y406q")
 
 [node name="AudioStreamPlayerPlaceOrb" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_88dq7")
+stream = ExtResource("3_p034j")
 volume_db = 10.0
 max_distance = 64.0
 attenuation = 2.0
@@ -49,6 +49,6 @@ max_polyphony = 15
 bus = &"SoundEffects"
 
 [node name="AudioStreamPlayerFailed" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_sdf8p")
+stream = ExtResource("4_trdqh")
 max_polyphony = 15
 bus = &"SoundEffects"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c3sdrah7nx6bs"]
 
-[ext_resource type="PackedScene" uid="uid://dhwpbwves76gi" path="res://src/maps/difficulties/default.tscn" id="1_wn5ho"]
+[ext_resource type="PackedScene" uid="uid://dhwpbwves76gi" path="res://src/maps/game_modes/default.tscn" id="1_wn5ho"]
 [ext_resource type="Texture2D" uid="uid://cob0lie4jdufj" path="res://assets/background/red.tres" id="2_sguci"]
 
 [node name="1" instance=ExtResource("1_wn5ho")]

@@ -8,17 +8,17 @@ const MAX_ORB_NUMBER := 15
 
 var current_map: Node2D
 var main_menu: Control
-var difficulties := {
-	"normal": preload("res://src/maps/difficulties/default.tscn"),
-	"hard": preload("res://src/maps/difficulties/1.tscn"),
-	"nightmare": preload("res://src/maps/difficulties/double_core.tscn"),
-	"chaos": preload("res://src/maps/difficulties/points.tscn"),
-	"eclipse": preload("res://src/maps/difficulties/distant_cores.tscn"),
+var game_modes := {
+	"normal": preload("res://src/map/game_modes/default.tscn"),
+	"hard": preload("res://src/map/game_modes/1.tscn"),
+	"nightmare": preload("res://src/map/game_modes/double_core.tscn"),
+	"chaos": preload("res://src/map/game_modes/points.tscn"),
+	"eclipse": preload("res://src/map/game_modes/distant_cores.tscn"),
 }
 var orb_counter := 0
 var orbs_placed := 0
 var seconds := 0
-var chosen_difficulty: String
+var chosen_game_mode: String
 
 @onready var black_rect: ColorRect = %BlackRect
 
@@ -29,15 +29,15 @@ func _ready() -> void:
 	get_tree().paused = true
 
 
-func load_map(id: String) -> void:
+func load_game_mode(id: String) -> void:
 	Engine.time_scale = 1
-	var new_map: Node2D = difficulties[id].instantiate()
+	var next_map: Node2D = game_modes[id].instantiate()
 	await fade_darkness_in().finished
 	orb_counter = 0
 	orbs_placed = 0
-	chosen_difficulty = id
+	chosen_game_mode = id
 	fade_darkness_out()
-	current_map = new_map
+	current_map = next_map
 	get_tree().get_root().add_child(current_map)
 	get_tree().paused = false
 
@@ -82,7 +82,7 @@ func _on_core_broken(core: Orb) -> void:
 
 
 func _on_restart_map() -> void:
-	load_map(chosen_difficulty)
+	load_game_mode(chosen_game_mode)
 
 
 func _on_main_menu_requested() -> void:

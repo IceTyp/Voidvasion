@@ -1,18 +1,16 @@
 extends VBoxContainer
 
-signal difficulty_selected(difficulty)
+signal game_mode_selected(game_mode)
 
 
 func _ready() -> void:
-	difficulty_selected.connect(Global.load_map)
-	
-	for key in Global.difficulties:
+	game_mode_selected.connect(Global.load_game_mode)
+	for key in Global.game_modes:
 		var button := Button.new()
 		button.text = key
-		button.pressed.connect(_on_button_difficulty_pressed.bind(key))
+		button.pressed.connect(_on_button_game_mode_pressed.bind(key))
 		add_child(button)
-	ButtonUpdater.update_buttons(self)
 
 
-func _on_button_difficulty_pressed(id: String) -> void:
-	difficulty_selected.emit(id)
+func _on_button_game_mode_pressed(id: String) -> void:
+	game_mode_selected.emit(id)

@@ -1,12 +1,12 @@
 extends Control
 
 
-const messages := {
+const MESSAGES := {
 	0: "Flicker of Hope",
 	120: "Glowing Effort",
 	140: "Guiding Light",
 	160: "Radiant Stand",
-	180: "Luminous\nResilience",
+	180: "Luminous Resilience",
 	200: "Resolute Spirit",
 }
 
@@ -26,15 +26,15 @@ func update_result(val: String) -> void:
 		"[center][color=#ce643b][ghost freq=-4, span=3]%s[/ghost][/color][/center]\nOrbs: %s\n%s" % [
 				result,
 				Global.orbs_placed,
-				Global.chosen_difficulty
+				Global.chosen_game_mode
 		]
 	)
 
 
 func _on_game_ended() -> void:
-	for key in messages.keys():
+	for key in MESSAGES.keys():
 		if key < Global.seconds:
-			result = messages[key]
+			result = MESSAGES[key]
 		else:
 			break
 	show()
@@ -45,7 +45,7 @@ func _on_button_copy_pressed() -> void:
 		"%s\nYou survived %s seconds on %s and used %s orb%s." % [
 				result,
 				Global.seconds,
-				Global.chosen_difficulty.to_upper(),
+				Global.chosen_game_mode.to_upper(),
 				Global.orbs_placed,
 				"" if Global.orbs_placed == 1 else "s"
 		]

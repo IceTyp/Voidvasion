@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dyo1xmcmh47lf"]
 
-[ext_resource type="PackedScene" uid="uid://dhwpbwves76gi" path="res://src/maps/difficulties/default.tscn" id="1_87b3r"]
+[ext_resource type="PackedScene" uid="uid://dhwpbwves76gi" path="res://src/maps/game_modes/default.tscn" id="1_87b3r"]
 [ext_resource type="PackedScene" uid="uid://olw5saaxm5rm" path="res://src/orbs/core.tscn" id="2_hxb13"]
 [ext_resource type="Texture2D" uid="uid://7nf7hfegdmn5" path="res://assets/background/distant_cores.tres" id="2_uegrx"]
 

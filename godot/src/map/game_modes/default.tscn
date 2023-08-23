@@ -1,36 +1,36 @@
 [gd_scene load_steps=12 format=3 uid="uid://dhwpbwves76gi"]
 
-[ext_resource type="Script" path="res://src/maps/map.gd" id="1_0h21x"]
-[ext_resource type="PackedScene" uid="uid://cu10jyb0dvxau" path="res://src/maps/cursor_light.tscn" id="2_h0ghx"]
-[ext_resource type="Texture2D" uid="uid://clgflfdk1awca" path="res://assets/background/gray.tres" id="2_tpnd3"]
-[ext_resource type="PackedScene" uid="uid://olw5saaxm5rm" path="res://src/orbs/core.tscn" id="4_gr6yd"]
-[ext_resource type="PackedScene" uid="uid://ctelatmnjy16n" path="res://src/tiles/arrived_tile.tscn" id="5_kbcn3"]
-[ext_resource type="PackedScene" uid="uid://csbl7cdky8pmi" path="res://src/tiles/void_tile.tscn" id="6_my2kv"]
-[ext_resource type="Script" path="res://src/maps/tilemap_filler.gd" id="7_vu66p"]
-[ext_resource type="PackedScene" uid="uid://gu2328w2x2tp" path="res://src/user_interface/game_menu.tscn" id="7_x7jl6"]
-[ext_resource type="AudioStream" uid="uid://bj8m553hcwx6f" path="res://sound/background/void.ogg" id="8_eveyf"]
+[ext_resource type="Script" path="res://src/map/map.gd" id="1_qv28t"]
+[ext_resource type="Texture2D" uid="uid://clgflfdk1awca" path="res://assets/background/gray.tres" id="2_7frwg"]
+[ext_resource type="PackedScene" uid="uid://cu10jyb0dvxau" path="res://src/map/cursor_light.tscn" id="3_0djyj"]
+[ext_resource type="PackedScene" uid="uid://olw5saaxm5rm" path="res://src/orbs/core.tscn" id="4_egwhi"]
+[ext_resource type="PackedScene" uid="uid://ctelatmnjy16n" path="res://src/tiles/arrived_tile.tscn" id="5_qygsk"]
+[ext_resource type="PackedScene" uid="uid://csbl7cdky8pmi" path="res://src/tiles/void_tile.tscn" id="6_1yukk"]
+[ext_resource type="Script" path="res://src/map/tilemap_filler.gd" id="7_jivyr"]
+[ext_resource type="PackedScene" uid="uid://gu2328w2x2tp" path="res://src/user_interface/game_menu.tscn" id="8_3ussm"]
+[ext_resource type="AudioStream" uid="uid://bj8m553hcwx6f" path="res://sound/background/void.ogg" id="9_qr1vq"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_cyeso"]
-scenes/1/scene = ExtResource("5_kbcn3")
-scenes/2/scene = ExtResource("6_my2kv")
+scenes/1/scene = ExtResource("5_qygsk")
+scenes/2/scene = ExtResource("6_1yukk")
 
 [sub_resource type="TileSet" id="TileSet_lfs42"]
 tile_size = Vector2i(1, 1)
 sources/0 = SubResource("TileSetScenesCollectionSource_cyeso")
 
 [node name="MapTemplate" type="Node2D"]
-script = ExtResource("1_0h21x")
+script = ExtResource("1_qv28t")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(32, 32)
-texture = ExtResource("2_tpnd3")
+texture = ExtResource("2_7frwg")
 
-[node name="CursorLight" parent="." node_paths=PackedStringArray("orbs") instance=ExtResource("2_h0ghx")]
+[node name="CursorLight" parent="." node_paths=PackedStringArray("orbs") instance=ExtResource("3_0djyj")]
 orbs = NodePath("../Orbs")
 
 [node name="Orbs" type="Node2D" parent="."]
 
-[node name="Core" parent="Orbs" instance=ExtResource("4_gr6yd")]
+[node name="Core" parent="Orbs" instance=ExtResource("4_egwhi")]
 position = Vector2(32, 36)
 collision_mask = 1
 
@@ -39,16 +39,16 @@ tile_set = SubResource("TileSet_lfs42")
 cell_quadrant_size = 1
 format = 2
 layer_0/tile_data = PackedInt32Array(655360, 0, 65536, 720896, 0, 65536, 458755, 0, 65536, 458756, 0, 65536, 458812, 0, 65536, 458811, 0, 65536, 720959, 0, 65536, 655423, 0, 65536, 3866687, 0, 65536, 3932223, 0, 65536, 4128827, 0, 65536, 4128828, 0, 65536, 3866624, 0, 65536, 3932160, 0, 65536, 4128771, 0, 65536, 4128772, 0, 65536, 3473471, 0, 65536, 3407935, 0, 65536, 1114175, 0, 65536, 1179711, 0, 65536, 458805, 0, 65536, 458804, 0, 65536, 458762, 0, 65536, 458763, 0, 65536, 1114112, 0, 65536, 1179648, 0, 65536, 3473408, 0, 65536, 3407872, 0, 65536, 4128778, 0, 65536, 4128779, 0, 65536, 4128821, 0, 65536, 4128820, 0, 65536, 786432, 0, 65536, 458757, 0, 65536, 458810, 0, 65536, 786495, 0, 65536, 3801151, 0, 65536, 4128826, 0, 65536, 4128773, 0, 65536, 3801088, 0, 65536, 3735552, 0, 65536, 4128774, 0, 65536, 4128825, 0, 65536, 3735615, 0, 65536, 852031, 0, 65536, 458809, 0, 65536, 458758, 0, 65536, 851968, 0, 65536, 458764, 0, 65536, 1245184, 0, 65536, 458803, 0, 65536, 1245247, 0, 65536, 3342399, 0, 65536, 4128819, 0, 65536, 4128780, 0, 65536, 3342336, 0, 65536)
-script = ExtResource("7_vu66p")
+script = ExtResource("7_jivyr")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.784314, 0.784314, 0.784314, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="GameMenu" parent="CanvasLayer" instance=ExtResource("7_x7jl6")]
+[node name="GameMenu" parent="CanvasLayer" instance=ExtResource("8_3ussm")]
 
 [node name="AudioStreamPlayerVoid" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_eveyf")
+stream = ExtResource("9_qr1vq")
 volume_db = -10.0
 bus = &"Background"

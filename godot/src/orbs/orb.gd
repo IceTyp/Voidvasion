@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 func set_auras() -> void:
 	for i in range(energy):
 		var element := aura.instantiate()
-		element.init(i+1)
+		element.init(i + 1)
 		auras.add_child(element)
 
 
