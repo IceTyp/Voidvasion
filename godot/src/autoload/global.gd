@@ -4,7 +4,7 @@ signal game_started
 signal game_ended
 signal orb_count_changed
 
-const max_orb_number := 15
+const MAX_ORB_NUMBER := 15
 
 var current_map: Node2D
 var main_menu: Control

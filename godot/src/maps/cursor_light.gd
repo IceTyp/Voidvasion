@@ -16,7 +16,7 @@ var placing_active := false
 func _process(delta: float) -> void:
 	rotate(-delta / 8)
 	position = get_global_mouse_position().round()
-	visible = Global.orb_counter < Global.max_orb_number
+	visible = Global.orb_counter < Global.MAX_ORB_NUMBER
 	point_light_2d.energy = 3 if await is_valid_orb_position(position) else 1
 
 
@@ -54,7 +54,7 @@ func is_valid_orb_position(target: Vector2) -> bool:
 	target = target.round()
 	if not get_viewport_rect().has_point(target):
 		return false
-	if Global.orb_counter >= Global.max_orb_number:
+	if Global.orb_counter >= Global.MAX_ORB_NUMBER:
 		return false
 	for orb in orbs.get_children():
 		if target.distance_to(orb.position) < 6:

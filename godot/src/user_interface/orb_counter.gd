@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func update() -> void:
 	text = str(Global.orb_counter)
-	if Global.orb_counter >= Global.max_orb_number:
+	if Global.orb_counter >= Global.MAX_ORB_NUMBER:
 		modulate = Color(0.4, 0.4, 0.4, 1)
 	else:
 		modulate = Color(1, 1, 1, 1)

@@ -5,10 +5,10 @@ extends Node2D
 
 
 func _ready() -> void:
-	Global.game_started.connect(start_darkening)
+	Global.game_started.connect(intensivy_void)
 
 
-func start_darkening() -> void:
+func intensivy_void() -> void:
 	audio_stream_player_void.play()
 	var tween := create_tween()
 	tween.tween_property(canvas_modulate, "color", Color(0.5, 0.5, 0.5, 1), 1)

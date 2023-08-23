@@ -32,7 +32,7 @@ func start_approach() -> void:
 	if state == States.WAITING:
 		state = States.APPROACHING
 		while void_level < 1:
-			timer.start(randf_range(.5, 2))
+			timer.start(randf_range(0.5, 2))
 			await timer.timeout
 			approach()
 		emit_signal("arrived")
