@@ -7,6 +7,7 @@ func _ready() -> void:
 	hide()
 	main_menu_requested.connect(Global._on_main_menu_requested)
 	visibility_changed.connect(_on_visibility_changed)
+	Global.game_ended.connect(_on_game_ended)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -22,3 +23,7 @@ func _on_button_resume_pressed() -> void:
 
 func _on_visibility_changed() -> void:
 	get_tree().paused = visible
+
+
+func _on_game_ended() -> void:
+	queue_free()
