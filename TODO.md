@@ -1,35 +1,11 @@
 # TODO
 
-## Changes
+## Bugs
 
-* hold mouse button to keep trying to place orbs
-* fast forward button
-  * click or press `SPACE`
-* pause menu
-  * click or press `P`, `X`, `ESC`
-* main menu button in game end menu
-* cursor light
-  * color
-  * weak light when collision
-* start button clickable area
-
-##
-
-* rename difficulties ingame to `game modes` or `modes`
-
-* [ ] hide cursor when out of tilemap
-  * light can be seen
+* [ ] when orb breaks in fast forward mode, sound effect is cut off
 
 * [ ] bug: canvas modulate is too bright when `restart`
   * when map is loaded and map is active, canvas modulate is too bright
-
-* [ ] redesign "normal"
-  * there should never be tiles outside of the screen
-  * plain rectangle doesn't change much since this could also just be the border of the map
-
-* [ ] use scene for button connect script?
-  * [ ] overwrite virtual method `_enter_tree` to connect `child_entered`
-    * we still need to set up audio stream players in ready, `update_buttons` is called too early
 
 * [ ] bug: move mouse fast to place orbs where you shouldn't be allowed to place them.
   * when orb comes into play
@@ -38,27 +14,11 @@
     * if not, show it and connect signals
   * orbs might break immediately
 
-* [ ] make it easier to distinguish core from other orbs
-  * this is difficult if background is colorful
-  * gray square that occludes light? What with canvas modulate?
+## Optional
 
-* [ ] make repository public
-  * protect master branch
-  * [ ] add license to repository
-  * later
-  * if project is successful enough, make devlog about this
+* use svg file instead of png for icon
 
-## Theme
-
-* [ ] what is the void?
-* [ ] make it thematically clearer why we want to hold out for as long as possible
-
-## Performance
-
-* [ ] waiting and arriving tiles could just be sprites
-  * only approaching tiles are scenes
-
-## Feature ideas
+### Features
 
 * [ ] achievements?
   * survive 2 min
@@ -72,25 +32,13 @@
   * local
     * 2 mice?
 
-## Ideas for other game
-
-* [ ] different theme
-* [ ] upgrades for orbs
-* game progress
-  1. place/upgrade orbs
-  2. watch void progressing for some time
-  3. repeat
-
-## Blockers
-
-## Optional
-
-* use svg file instead of png for icon
-
-### Features
-
-* [ ] score board
+* score board
   * grid container
+  * needs too much space
+  * display
+    * map name
+    * time
+    * orbs
 
 * [ ] random maps
 
@@ -117,16 +65,41 @@
 
 ### Improvements
 
+* [ ] hide cursor when out of tilemap
+  * light can be seen
+
+* [ ] redesign "normal"
+  * there should never be tiles outside of the screen
+
+* [ ] use scene for button connect script?
+  * [ ] overwrite virtual method `_enter_tree` to connect `child_entered`
+    * we still need to set up audio stream players in ready, `update_buttons` is called too early
+
 * differentiate core from other orbs
   * different sound/animation when core breaks
     * bright light
+  * [ ] make it easier to distinguish core from other orbs
+    * this is difficult if background is colorful
+    * gray square that occludes light? What with canvas modulate?
 
 * define orange color for buttons and message and heading... once
+
+#### User interface
 
 * improve ui theme
   * issues with spacing above and below
     * label
     * button
+
+#### Theme
+
+* [ ] what is the void?
+* [ ] make it thematically clearer why we want to hold out for as long as possible
+
+#### Performance
+
+* [ ] waiting and arriving tiles could just be sprites
+  * only approaching tiles are scenes
 
 ### Sound effects
 
@@ -138,20 +111,3 @@
 * find better font
   * e.g. 5 height
   * monospace
-
-## Testing
-
-* [ ] how long can one survive
-  * 3:00 is possible
-    * place orbs close to void
-    * orbs should break often so that we can place many orbs
-
-* [ ] messages should be adapted
-  * depends on expected time when doing nothing
-  * depends on difficulties
-
-* without pushing already approaching tiles
-  * 1:53
-  * 1:38
-  * 1:30
-  * 1:22, 1:18
